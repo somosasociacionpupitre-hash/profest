@@ -3,179 +3,971 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PROFEST! 2026</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
-
+<title>PROFEST! - (Re)Encuentro Educativo 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Nunito:wght@400;600;700;900&family=Nunito+Sans:wght@400;600;800&display=swap" rel="stylesheet">
 <style>
-body{
-  margin:0;
-  font-family:'Nunito', sans-serif;
-  background:#fdf8f0;
-  color:#222;
-  line-height:1.6;
+:root {
+  --verde: #3d7a6a;
+  --verde-dark: #2c5a4e;
+  --amarillo: #f5a623;
+  --amarillo-dark: #e09010;
+  --blanco: #ffffff;
+  --crema: #fdf8f0;
+  --gris: #555;
+  --negro: #1a1a1a;
 }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Nunito Sans', sans-serif; background: var(--crema); color: var(--negro); overflow-x: hidden; }
 
-section{
-  padding:4rem 1.5rem;
-  max-width:1100px;
-  margin:auto;
-}
+/* NAV */
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: var(--verde-dark); display: flex; align-items: center; justify-content: space-between; padding: 0 2rem; height: 60px; box-shadow: 0 2px 20px rgba(0,0,0,.3); }
+.nav-logo { font-family: 'Bebas Neue', sans-serif; font-size: 1.8rem; color: var(--amarillo); letter-spacing: 2px; }
+.nav-links { display: flex; gap: 1.5rem; list-style: none; }
+.nav-links a { color: var(--blanco); text-decoration: none; font-weight: 700; font-size: .85rem; letter-spacing: 1px; text-transform: uppercase; transition: color .2s; }
+.nav-links a:hover { color: var(--amarillo); }
+.nav-cta { background: var(--amarillo); color: var(--negro) !important; padding: .4rem 1.2rem; border-radius: 50px; }
+.nav-cta:hover { background: var(--amarillo-dark) !important; }
+@media (max-width: 768px) { .nav-links { display: none; } }
 
-h1,h2,h3{
-  font-family:'Bebas Neue', sans-serif;
-  letter-spacing:0.05em;
-}
+/* HERO */
+.hero { min-height: 100vh; background: var(--verde); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 100px 2rem 4rem; position: relative; overflow: hidden; }
+.hero::before { content: ''; position: absolute; top: -100px; right: -100px; width: 500px; height: 500px; background: var(--amarillo); border-radius: 50%; opacity: .12; }
+.hero::after { content: ''; position: absolute; bottom: -80px; left: -80px; width: 350px; height: 350px; background: var(--amarillo); border-radius: 50%; opacity: .1; }
+.hero h1 { font-family: 'Bebas Neue', sans-serif; font-size: clamp(5rem, 15vw, 12rem); color: var(--amarillo); line-height: .9; letter-spacing: 4px; animation: fadeDown .6s .1s ease both; }
+.hero-subtitle { font-family: 'Bebas Neue', sans-serif; font-size: clamp(1.5rem, 4vw, 3rem); color: var(--blanco); letter-spacing: 6px; margin: .5rem 0 2rem; animation: fadeDown .6s .3s ease both; }
+.hero-meta { display: flex; gap: 1.5rem; flex-wrap: wrap; justify-content: center; margin-bottom: 2.5rem; animation: fadeDown .6s .45s ease both; }
+.hero-meta-item { background: rgba(255,255,255,.15); color: var(--blanco); padding: .8rem 1.5rem; border-radius: 12px; font-weight: 700; font-size: 1rem; border: 1px solid rgba(255,255,255,.2); }
+.hero-meta-item span { color: var(--amarillo); }
+.hero-btn { background: var(--amarillo); color: var(--negro); font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 1.1rem; padding: 1rem 3rem; border-radius: 50px; text-decoration: none; display: inline-block; transition: transform .2s, box-shadow .2s; box-shadow: 0 8px 30px rgba(245,166,35,.4); animation: fadeDown .6s .6s ease both; }
+.hero-btn:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(245,166,35,.5); }
 
-.hero{
-  background:#23483f;
-  color:white;
-  text-align:center;
-  padding:6rem 1.5rem;
-}
+/* SECCIONES */
+section { padding: 5rem 1.5rem; }
+.section-inner { max-width: 1100px; margin: 0 auto; }
+.section-tag { font-size: .75rem; font-weight: 900; letter-spacing: 4px; text-transform: uppercase; color: var(--amarillo-dark); margin-bottom: .5rem; }
+.section-title { font-family: 'Bebas Neue', sans-serif; font-size: clamp(2.5rem, 6vw, 4.5rem); line-height: 1; margin-bottom: 1.5rem; }
 
-.hero h1{
-  font-size:4.5rem;
-  color:#f5a623;
-  margin:0;
-}
+/* QUE ES */
+#que-es { background: var(--amarillo); }
+#que-es .section-title { color: var(--verde-dark); }
+#que-es .section-tag { color: var(--verde-dark); opacity: .7; }
+.que-es-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; margin-top: 2.5rem; }
+.que-es-card { background: rgba(255,255,255,.35); border-radius: 16px; padding: 1.5rem; border: 2px solid rgba(255,255,255,.5); transition: transform .2s; }
+.que-es-card:hover { transform: translateY(-4px); }
+.que-es-card .emoji { font-size: 2rem; margin-bottom: .7rem; }
+.que-es-card p { font-weight: 600; color: var(--verde-dark); font-size: .95rem; line-height: 1.5; }
 
-.hero p{
-  max-width:700px;
-  margin:1.5rem auto;
-  font-size:1.1rem;
-}
+/* PARA QUIEN */
+#para-quien { background: var(--crema); }
+#para-quien .section-title { color: var(--verde-dark); }
+.para-quien-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.2rem; margin-top: 2rem; }
+.para-quien-item { background: var(--verde); color: var(--blanco); padding: 1.5rem; border-radius: 16px; font-weight: 700; font-size: 1rem; text-align: center; transition: transform .2s, background .2s; }
+.para-quien-item:hover { transform: scale(1.03); background: var(--verde-dark); }
+.para-quien-item .icon { font-size: 2rem; margin-bottom: .6rem; }
 
-.btn{
-  display:inline-block;
-  background:#f5a623;
-  color:#111;
-  padding:0.9rem 1.4rem;
-  border-radius:40px;
-  font-weight:800;
-  text-decoration:none;
-  margin-top:1rem;
-}
+/* CUANDO */
+#cuando { background: var(--verde-dark); }
+#cuando .section-title { color: var(--amarillo); }
+#cuando .section-tag { color: rgba(255,255,255,.6); }
+.cuando-flex { display: flex; gap: 3rem; align-items: flex-start; flex-wrap: wrap; margin-top: 2rem; }
+.cuando-info { flex: 1; min-width: 260px; }
+.info-pill { display: flex; align-items: center; gap: .7rem; background: var(--amarillo); color: var(--negro); font-weight: 900; padding: .8rem 1.5rem; border-radius: 12px; font-size: 1.05rem; margin-bottom: 1rem; }
+.cuando-desc { color: rgba(255,255,255,.85); font-size: 1rem; line-height: 1.7; margin-top: 1.5rem; }
+.cuando-foto { flex: 0 0 380px; border-radius: 20px; overflow: hidden; min-height: 260px; }
+.cuando-foto img { width: 100%; height: 100%; object-fit: cover; border-radius: 20px; display: block; }
+.cuando-foto-placeholder { width: 100%; min-height: 260px; background: rgba(255,255,255,.08); border: 2px dashed rgba(255,255,255,.25); border-radius: 20px; display: flex; align-items: center; justify-content: center; text-align: center; color: rgba(255,255,255,.4); padding: 2rem; }
+.cuando-foto-placeholder p { font-size: .9rem; font-weight: 600; }
+@media (max-width: 768px) { .cuando-flex { flex-direction: column; } .cuando-foto { flex: unset; width: 100%; } }
 
-.box{
-  background:white;
-  padding:1.5rem;
-  border-radius:18px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.08);
-  border:1px solid rgba(0,0,0,0.08);
-}
+/* COMO FUNCIONA */
+#como { background: var(--crema); }
+#como .section-title { color: var(--verde-dark); }
+.como-layout { display: flex; gap: 3rem; align-items: flex-start; flex-wrap: wrap; margin-top: 2rem; }
+.como-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1rem; flex: 1; min-width: 300px; }
+.como-item { background: white; border-radius: 16px; padding: 1.2rem 1rem; text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,.06); border-top: 4px solid var(--amarillo); transition: transform .2s; }
+.como-item:hover { transform: translateY(-4px); }
+.como-item .emoji { font-size: 1.8rem; margin-bottom: .6rem; }
+.como-item h4 { font-weight: 900; color: var(--verde-dark); margin-bottom: .3rem; font-size: .9rem; }
+.como-item p { font-size: .78rem; color: var(--gris); line-height: 1.4; }
 
-.image-box{
-  margin-top:2rem;
-  border-radius:20px;
-  overflow:hidden;
-  box-shadow:0 15px 40px rgba(0,0,0,0.15);
-}
+/* HORARIO TIPO */
+.horario-mini { flex: 0 0 260px; background: var(--verde-dark); border-radius: 20px; padding: 1.5rem; color: var(--blanco); }
+.horario-mini h4 { font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem; color: var(--amarillo); letter-spacing: 2px; margin-bottom: 1rem; }
+.h-item { display: flex; gap: .8rem; align-items: baseline; padding: .45rem 0; border-bottom: 1px solid rgba(255,255,255,.1); font-size: .83rem; }
+.h-item:last-child { border-bottom: none; }
+.h-time { color: var(--amarillo); font-weight: 900; min-width: 70px; font-size: .78rem; }
+.h-desc { color: rgba(255,255,255,.85); }
+@media (max-width: 768px) { .como-layout { flex-direction: column; } .horario-mini { flex: unset; width: 100%; } }
 
-.image-box img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  display:block;
-}
+/* CURSOS */
+#cursos { background: var(--verde); }
+#cursos .section-title { color: var(--amarillo); }
+#cursos .section-tag { color: rgba(255,255,255,.6); }
+#cursos > .section-inner > p { color: rgba(255,255,255,.85); font-size: 1.05rem; margin-bottom: 2.5rem; line-height: 1.7; }
+.cursos-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 1.5rem; }
+.curso-card { background: var(--crema); border-radius: 20px; overflow: hidden; transition: transform .25s, box-shadow .25s; }
+.curso-card:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(0,0,0,.25); }
+.curso-card-header { background: var(--amarillo); padding: 1.5rem; }
+.curso-card-header h3 { font-family: 'Bebas Neue', sans-serif; font-size: 1.8rem; color: var(--verde-dark); letter-spacing: 1px; line-height: 1; }
+.etapa-tag { font-size: .75rem; font-weight: 700; color: var(--verde-dark); margin-top: .4rem; opacity: .7; }
+.curso-card-body { padding: 1.5rem; }
+.curso-card-body > p { font-size: .9rem; color: var(--gris); line-height: 1.6; margin-bottom: 1rem; }
+.obj-list { list-style: none; margin: .5rem 0 1rem; }
+.obj-list li { font-size: .82rem; color: var(--gris); padding: .2rem 0 .2rem 1.2rem; position: relative; line-height: 1.4; }
+.obj-list li::before { content: '\25B8'; position: absolute; left: 0; color: var(--amarillo-dark); }
 
-.schedule-box{
-  margin-top:2rem;
-  background:#ffffff;
-  border-radius:18px;
-  padding:1.5rem;
-  box-shadow:0 10px 30px rgba(0,0,0,0.08);
-  border:1px solid rgba(0,0,0,0.08);
-}
+/* ACCORDION FORMADORES */
+.acc-wrap { border-top: 1px solid #e0d9d0; margin-top: 1rem; }
+.acc-btn { display: flex; align-items: center; gap: .7rem; width: 100%; background: none; border: none; cursor: pointer; padding: .75rem 0; text-align: left; }
+.acc-avatar { width: 40px; height: 40px; border-radius: 50%; background: var(--verde); color: white; font-weight: 900; font-size: .8rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-family: 'Nunito', sans-serif; overflow: hidden; }
+.acc-avatar img { width: 100%; height: 100%; object-fit: cover; }
+.acc-info { flex: 1; }
+.acc-info strong { display: block; font-size: .88rem; color: var(--negro); }
+.acc-info span { font-size: .76rem; color: var(--gris); }
+.acc-arrow { font-size: .75rem; color: var(--gris); transition: transform .3s; }
+.acc-body { max-height: 0; overflow: hidden; transition: max-height .4s ease; }
+.acc-body-inner { background: #ede8dc; border-radius: 10px; margin-bottom: .5rem; }
+.acc-body.open { max-height: 700px; }
+.acc-body.open .acc-body-inner { padding: 1rem; }
+.acc-arrow.open { transform: rotate(180deg); }
+.formador-header { display: flex; align-items: center; gap: 1rem; margin-bottom: .6rem; }
+.formador-foto-grande { width: 65px; height: 65px; border-radius: 50%; object-fit: cover; border: 3px solid var(--verde); flex-shrink: 0; }
+.formador-foto-placeholder { width: 65px; height: 65px; border-radius: 50%; background: var(--verde); color: white; display: flex; align-items: center; justify-content: center; font-family: 'Bebas Neue', sans-serif; font-size: 1.5rem; flex-shrink: 0; }
+.acc-body-inner .formador-nombre { font-weight: 900; color: var(--verde-dark); font-size: .9rem; display: block; }
+.acc-body-inner .formador-cargo { font-size: .76rem; color: var(--gris); display: block; margin-top: .1rem; }
+.acc-body-inner p { font-size: .82rem; color: var(--gris); line-height: 1.6; margin-top: .5rem; }
 
-.schedule-box h3{
-  margin-top:0;
-  font-size:1.8rem;
-  color:#2c5a4e;
-}
+/* TALLERES */
+#talleres { background: var(--amarillo); }
+#talleres .section-title { color: var(--verde-dark); }
+#talleres .section-tag { color: var(--verde-dark); opacity: .7; }
+.talleres-flex { display: flex; gap: 2rem; flex-wrap: wrap; margin-top: 2rem; }
+.taller-box { flex: 1; min-width: 260px; background: var(--verde-dark); border-radius: 20px; padding: 2rem; color: var(--blanco); }
+.taller-box h3 { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; color: var(--amarillo); letter-spacing: 2px; margin-bottom: .8rem; }
+.taller-box p { font-size: .95rem; line-height: 1.7; opacity: .9; }
 
-.schedule-box div{
-  margin:0.5rem 0;
-  font-weight:600;
-}
+/* ALOJAMIENTO */
+#alojamiento { background: var(--verde-dark); }
+#alojamiento .section-title { color: var(--blanco); }
+#alojamiento .section-tag { color: var(--amarillo); opacity: .8; }
+.aloj-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 2rem; }
+@media (max-width: 600px) { .aloj-grid { grid-template-columns: 1fr; } }
+.aloj-card { background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.2); border-radius: 16px; padding: 2rem; color: var(--blanco); }
+.aloj-card h3 { font-weight: 900; font-size: 1.1rem; margin-bottom: .8rem; color: var(--amarillo); }
+.aloj-card p { font-size: .9rem; line-height: 1.6; opacity: .85; }
 
-footer{
-  background:#111;
-  color:white;
-  text-align:center;
-  padding:2rem 1rem;
-}
+/* INSCRIPCION */
+#inscripcion { background: var(--crema); }
+#inscripcion .section-title { color: var(--verde-dark); }
+.inscripcion-intro { font-size: 1rem; color: var(--gris); max-width: 700px; line-height: 1.7; margin-bottom: 2.5rem; }
+.tarifas-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; }
+.tarifa-card { border-radius: 20px; padding: 2rem; text-align: center; position: relative; overflow: hidden; transition: transform .25s, box-shadow .25s; }
+.tarifa-card:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(0,0,0,.15); }
+.tarifa-card.media { background: var(--verde); color: var(--blanco); }
+.tarifa-card.precaria { background: white; border: 3px solid var(--verde); }
+.tarifa-card.desahogada { background: var(--amarillo); }
+.tarifa-card.local { background: var(--verde-dark); color: var(--blanco); }
+.tarifa-nombre { font-family: 'Bebas Neue', sans-serif; font-size: 2rem; letter-spacing: 2px; margin-bottom: .3rem; }
+.tarifa-precio { font-family: 'Bebas Neue', sans-serif; font-size: 4rem; line-height: 1; color: var(--amarillo); margin-bottom: .5rem; }
+.tarifa-card.desahogada .tarifa-precio { color: var(--verde-dark); }
+.tarifa-card.precaria .tarifa-precio { color: var(--verde); }
+.tarifa-desc { font-size: .85rem; line-height: 1.6; opacity: .85; }
+.tarifa-badge { position: absolute; top: 12px; right: 12px; background: var(--amarillo); color: var(--negro); font-size: .65rem; font-weight: 900; letter-spacing: 1px; text-transform: uppercase; padding: .2rem .6rem; border-radius: 50px; }
+.tarifa-card.media .tarifa-badge { background: rgba(255,255,255,.25); color: white; }
+.inscripcion-incluye { margin-top: 2.5rem; background: var(--verde); border-radius: 16px; padding: 1.5rem 2rem; color: var(--blanco); }
+.inscripcion-incluye h4 { font-weight: 900; font-size: 1rem; color: var(--amarillo); margin-bottom: .7rem; }
+.inscripcion-incluye p { font-size: .9rem; line-height: 1.7; opacity: .9; }
+.inscripcion-cta { margin-top: 2.5rem; text-align: center; }
+.inscripcion-btn { background: var(--amarillo); color: var(--negro); font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 1.2rem; padding: 1.1rem 3.5rem; border-radius: 50px; text-decoration: none; display: inline-block; transition: transform .2s, box-shadow .2s; box-shadow: 0 8px 30px rgba(245,166,35,.3); }
+.inscripcion-btn:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(245,166,35,.5); }
+
+/* EQUIPO */
+#equipo { background: var(--verde); }
+#equipo .section-title { color: var(--amarillo); }
+#equipo .section-tag { color: rgba(255,255,255,.6); }
+.equipo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+.equipo-card { background: var(--crema); border-radius: 20px; padding: 1.5rem; text-align: center; transition: transform .2s; }
+.equipo-card:hover { transform: translateY(-4px); }
+.equipo-avatar { width: 90px; height: 90px; border-radius: 50%; background: var(--amarillo); margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; font-family: 'Bebas Neue', sans-serif; font-size: 2rem; color: var(--verde-dark); border: 4px solid var(--verde); overflow: hidden; }
+.equipo-avatar img { width: 100%; height: 100%; object-fit: cover; }
+.equipo-card h3 { font-weight: 900; font-size: 1rem; color: var(--verde-dark); margin-bottom: .4rem; }
+.equipo-card p { font-size: .82rem; color: var(--gris); line-height: 1.5; }
+
+/* DESDE DONDE */
+#desde-donde { background: var(--amarillo); }
+#desde-donde .section-title { color: var(--verde-dark); }
+#desde-donde .section-tag { color: var(--verde-dark); opacity: .7; }
+.desde-flex { display: flex; gap: 3rem; align-items: center; flex-wrap: wrap; margin-top: 2rem; }
+.desde-text { flex: 1; min-width: 260px; }
+.desde-text p { font-size: 1rem; color: var(--verde-dark); line-height: 1.8; margin-bottom: 1rem; font-weight: 600; }
+.desde-quote { flex: 0 0 300px; background: var(--verde-dark); border-radius: 20px; padding: 2rem; color: var(--blanco); font-size: 1rem; line-height: 1.8; font-weight: 700; }
+@media (max-width: 768px) { .desde-flex { flex-direction: column; } .desde-quote { flex: unset; width: 100%; } }
+
+/* FAQ */
+#faq { background: var(--crema); }
+#faq .section-title { color: var(--verde-dark); }
+.faq-list { margin-top: 2rem; display: flex; flex-direction: column; gap: 1rem; max-width: 800px; }
+.faq-item { background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,.06); }
+.faq-btn { display: flex; justify-content: space-between; align-items: center; width: 100%; background: none; border: none; cursor: pointer; padding: 1.2rem 1.5rem; text-align: left; font-family: 'Nunito Sans', sans-serif; }
+.faq-btn:hover { background: #f5f0e8; }
+.faq-question { font-weight: 800; font-size: 1rem; color: var(--verde-dark); }
+.faq-icon { font-size: 1.4rem; color: var(--amarillo-dark); transition: transform .3s; flex-shrink: 0; margin-left: 1rem; font-weight: 900; }
+.faq-icon.open { transform: rotate(45deg); }
+.faq-answer { max-height: 0; overflow: hidden; transition: max-height .4s ease; }
+.faq-answer.open { max-height: 500px; }
+.faq-answer-inner { padding: 0 1.5rem 1.2rem; font-size: .92rem; color: var(--gris); line-height: 1.8; }
+.faq-answer-inner ul { margin: .5rem 0 .5rem 1.5rem; }
+.faq-answer-inner ul li { margin-bottom: .3rem; }
+.faq-cta-box { margin-top: 3rem; background: var(--verde-dark); border-radius: 20px; padding: 2.5rem; text-align: center; color: var(--blanco); }
+.faq-cta-box h3 { font-family: 'Bebas Neue', sans-serif; font-size: 2.2rem; color: var(--amarillo); letter-spacing: 2px; margin-bottom: .8rem; }
+.faq-cta-box p { font-size: 1rem; opacity: .85; margin-bottom: 1.5rem; }
+.faq-cta-btn { background: var(--amarillo); color: var(--negro); font-family: 'Nunito', sans-serif; font-weight: 900; font-size: 1.1rem; padding: .9rem 2.5rem; border-radius: 50px; text-decoration: none; display: inline-block; transition: transform .2s; }
+.faq-cta-btn:hover { transform: translateY(-3px); }
+
+/* CONTACTO */
+#contacto { background: var(--verde-dark); text-align: center; }
+#contacto .section-title { color: var(--amarillo); }
+#contacto .section-tag { color: rgba(255,255,255,.5); }
+.contacto-grid { display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; margin: 2.5rem 0; }
+.contacto-item { background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.2); border-radius: 16px; padding: 1.5rem 2.5rem; color: var(--blanco); transition: background .2s, transform .2s; text-decoration: none; }
+.contacto-item:hover { background: rgba(255,255,255,.2); transform: translateY(-3px); }
+.ci-icon { font-size: 2rem; margin-bottom: .5rem; }
+.ci-label { font-size: .7rem; letter-spacing: 2px; text-transform: uppercase; opacity: .6; margin-bottom: .3rem; }
+.ci-value { font-weight: 900; font-size: 1rem; color: var(--amarillo); }
+
+/* FOOTER */
+footer { background: #111; text-align: center; padding: 2rem; color: rgba(255,255,255,.4); font-size: .85rem; }
+footer strong { color: var(--amarillo); }
+
+/* ANIMACIONES */
+@keyframes fadeDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+.reveal { opacity: 0; transform: translateY(30px); transition: opacity .6s ease, transform .6s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
 </style>
 </head>
-
 <body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">PROFEST!</div>
+  <ul class="nav-links">
+    <li><a href="#que-es">Qué es</a></li>
+    <li><a href="#cursos">Cursos</a></li>
+    <li><a href="#inscripcion">Inscripción</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSeuhp2MdthsTNxEZMAJ-akljXur0xn9qDnqH8Z8Jkkp1i8pVQ/viewform?usp=preview" target="_blank" class="nav-cta">¡Me apunto!</a></li>
+  </ul>
+</nav>
 
 <!-- HERO -->
 <section class="hero">
   <h1>PROFEST!</h1>
-  <p>(Re) Encuentro Educativo · 24–28 agosto 2026 · Castronuño (Valladolid)</p>
-  <p>Cuatro días de formación intensiva, comunidad y naturaleza para empezar el curso con claridad y red profesional.</p>
-  <a class="btn" href="https://docs.google.com/forms/" target="_blank">Quiero inscribirme</a>
+  <div class="hero-subtitle">(Re) Encuentro Educativo</div>
+  <div class="hero-meta">
+    <div class="hero-meta-item">📅 <span>24 – 28 agosto 2026</span></div>
+    <div class="hero-meta-item">📍 <span>Castronuño, Valladolid</span></div>
+    <div class="hero-meta-item">🎓 <span>7 cursos a elegir</span></div>
+    <div class="hero-meta-item">💛 <span>Tarifas a medida</span></div>
+  </div>
+  <a href="https://docs.google.com/forms/d/e/1FAIpQLSeuhp2MdthsTNxEZMAJ-akljXur0xn9qDnqH8Z8Jkkp1i8pVQ/viewform?usp=preview" target="_blank" class="hero-btn">¡Quiero ser parte de esto! →</a>
 </section>
 
-<!-- QUÉ ES -->
-<section>
-  <h2>¿Qué es PROFEST?</h2>
-  <div class="box">
-    <p>
-      PROFEST es un encuentro de docentes que combina formación rigurosa,
-      convivencia real y entorno rural.
-      No es un congreso masivo ni una sucesión de ponencias.
-      Es un espacio de aprendizaje en comunidad.
+<!-- QUE ES -->
+<section id="que-es">
+  <div class="section-inner">
+    <div class="section-tag reveal">¿Qué es PROFEST?</div>
+    <div class="section-title reveal">Cuatro días para aprender,<br>descansar y tejer comunidad.</div>
+    <div class="que-es-grid">
+      <div class="que-es-card reveal">
+        <div class="emoji">🧠</div>
+        <p>Un espacio de <strong>formación intensiva y práctica</strong> en grupos reducidos, con docentes que saben de lo que hablan.</p>
+      </div>
+      <div class="que-es-card reveal">
+        <div class="emoji">🤝</div>
+        <p>Una oportunidad real de <strong>conectar con otras personas</strong> que comparten tu mirada y tus ganas de mejorar.</p>
+      </div>
+      <div class="que-es-card reveal">
+        <div class="emoji">🏡</div>
+        <p>Un encuentro en <strong>un pueblo con río, naturaleza y buena energía</strong>, lejos del ruido del curso escolar.</p>
+      </div>
+      <div class="que-es-card reveal">
+        <div class="emoji">☀️</div>
+        <p>Una forma de prepararte para septiembre <strong>sin renunciar al verano</strong>. Con tiempo, calma y ganas.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARA QUIEN -->
+<section id="para-quien">
+  <div class="section-inner">
+    <div class="section-tag reveal">¿Para quién es?</div>
+    <div class="section-title reveal" style="color:var(--verde-dark)">Si te mueve la educación,<br>este espacio es tuyo.</div>
+    <div class="para-quien-grid">
+      <div class="para-quien-item reveal"><div class="icon">👩‍🏫</div>Docentes de cualquier etapa educativa</div>
+      <div class="para-quien-item reveal"><div class="icon">🏫</div>Equipos directivos de centros educativos</div>
+      <div class="para-quien-item reveal"><div class="icon">🎓</div>Estudiantes de carrera o máster en docencia</div>
+      <div class="para-quien-item reveal"><div class="icon">🌍</div>Educadores del ámbito no formal</div>
+    </div>
+    <p style="margin-top:2rem;font-size:1.05rem;font-weight:700;color:var(--verde);text-align:center;line-height:1.7;" class="reveal">
+      No hace falta tener mucha experiencia ni venir con alguien. Solo hace falta querer estar.
     </p>
   </div>
 </section>
 
-<!-- CÓMO FUNCIONA -->
-<section>
-  <h2>Cómo funciona</h2>
-
-  <div class="box">
-    <p><strong>Curso intensivo por las mañanas</strong> (12h en total).</p>
-    <p><strong>Talleres y píldoras formativas</strong> por las tardes.</p>
-    <p><strong>Espacios de bienestar</strong> y convivencia comunitaria.</p>
-  </div>
-
-  <!-- HORARIO TIPO -->
-  <div class="schedule-box">
-    <h3>Horario tipo</h3>
-
-    <div><strong>08:00</strong> · Mañanas activas (opcional)</div>
-    <div><strong>09:00</strong> · Desayuno</div>
-    <div><strong>10:00 – 14:00</strong> · Curso intensivo</div>
-    <div><strong>14:00</strong> · Comida + descanso</div>
-    <div><strong>17:00</strong> · Talleres / píldoras</div>
-    <div><strong>20:30</strong> · Cena + actividades comunitarias</div>
-
-    <p style="margin-top:1rem; font-size:0.9rem; color:#777;">
-      *El horario puede ajustarse ligeramente para favorecer el bienestar del grupo.
-    </p>
-  </div>
-
-</section>
-
-<!-- CUÁNDO Y DÓNDE -->
-<section>
-  <h2>Cuándo y dónde</h2>
-  <p>
-    Del 24 al 28 de agosto de 2026 en Castronuño (Valladolid),
-    en plena Reserva Natural de las Riberas del Duero.
-  </p>
-
-  <!-- IMAGEN -->
-  <div class="image-box">
-    <img src="castronuno.jpg" alt="Paisaje de Castronuño y el río Duero">
+<!-- CUANDO Y DONDE -->
+<section id="cuando">
+  <div class="section-inner">
+    <div class="section-tag reveal">Cuándo y dónde</div>
+    <div class="section-title reveal" style="color:var(--amarillo)">Del 24 al 28 de agosto de 2026</div>
+    <div class="cuando-flex">
+      <div class="cuando-info reveal">
+        <div class="info-pill">📅 Del 24 al 28 de agosto de 2026</div>
+        <div class="info-pill">📍 Castronuño, Valladolid</div>
+        <p class="cuando-desc">Un pueblo junto al Duero, con meandros, playa fluvial y la <strong style="color:var(--amarillo)">Reserva Natural de las Riberas de Castronuño</strong>. El único espacio protegido de la provincia. Un lugar elegido con cuidado: para que el entorno forme parte del encuentro.</p>
+      </div>
+      <div class="cuando-foto">
+        <!-- Sustituye esta imagen por castronuno.jpg cuando tengas la foto -->
+        <div class="cuando-foto-placeholder">
+          <p>📸<br>Foto de Castronuño<br><small>próximamente</small></p>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
+<!-- COMO FUNCIONA -->
+<section id="como">
+  <div class="section-inner">
+    <div class="section-tag reveal">¿Cómo funciona?</div>
+    <div class="section-title reveal" style="color:var(--verde-dark)">Cuatro días con ritmo,<br>sin agobios.</div>
+    <div class="como-layout">
+      <div class="como-grid">
+        <div class="como-item reveal">
+          <div class="emoji">🧠</div>
+          <h4>Curso intensivo</h4>
+          <p>Cada mañana, 4 horas de formación práctica. 12 horas en total.</p>
+        </div>
+        <div class="como-item reveal">
+          <div class="emoji">🎨</div>
+          <h4>Talleres</h4>
+          <p>Por las tardes, espacios opcionales para explorar y debatir.</p>
+        </div>
+        <div class="como-item reveal">
+          <div class="emoji">💭</div>
+          <h4>Metacognición</h4>
+          <p>Momentos para consolidar lo aprendido y conectarlo con tu práctica.</p>
+        </div>
+        <div class="como-item reveal">
+          <div class="emoji">🌅</div>
+          <h4>Mañanas activas</h4>
+          <p>Propuestas opcionales de movimiento y bienestar para empezar el día.</p>
+        </div>
+        <div class="como-item reveal">
+          <div class="emoji">🤝</div>
+          <h4>Tejer redes y ocio</h4>
+          <p>Actividades para conocerte, conectar y disfrutar del verano en el pueblo.</p>
+        </div>
+      </div>
+      <div class="horario-mini reveal">
+        <h4>Horario tipo</h4>
+        <div class="h-item"><span class="h-time">8:00</span><span class="h-desc">Mañana activa (opcional)</span></div>
+        <div class="h-item"><span class="h-time">9:00</span><span class="h-desc">Desayuno</span></div>
+        <div class="h-item"><span class="h-time">10:00 – 14:00</span><span class="h-desc">Curso intensivo</span></div>
+        <div class="h-item"><span class="h-time">14:00</span><span class="h-desc">Comida</span></div>
+        <div class="h-item"><span class="h-time">15:30 – 17:00</span><span class="h-desc">Tiempo libre</span></div>
+        <div class="h-item"><span class="h-time">17:00 – 19:00</span><span class="h-desc">Talleres (opcional)</span></div>
+        <div class="h-item"><span class="h-time">21:00</span><span class="h-desc">Cena</span></div>
+        <div class="h-item"><span class="h-time">22:30</span><span class="h-desc">Ocio y comunidad</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CURSOS -->
+<section id="cursos">
+  <div class="section-inner">
+    <div class="section-tag reveal">Propuesta formativa</div>
+    <div class="section-title reveal">7 cursos.<br>Tú eliges el tuyo.</div>
+    <p class="reveal">Al inscribirte eliges un curso al que asistir cada mañana. Son <strong style="color:var(--amarillo)">12 horas en total</strong>, en grupos reducidos y con metodologías activas. Nada de escuchar sentado. Venimos a aprender haciendo.</p>
+    <br>
+    <div class="cursos-grid">
+
+      <!-- CURSO 1 -->
+      <div class="curso-card reveal">
+        <div class="curso-card-header">
+          <h3>Educación Inclusiva</h3>
+          <div class="etapa-tag">Primaria · Secundaria · FP · Postobligatoria</div>
+        </div>
+        <div class="curso-card-body">
+          <p>Aprender a crear entornos donde todo el alumnado pueda participar y progresar de verdad. Con herramientas concretas para llevar al aula el lunes.</p>
+          <ul class="obj-list">
+            <li>Educación inclusiva desde las dimensiones de presencia, participación y progreso</li>
+            <li>Diseño Universal para el Aprendizaje (DUA)</li>
+            <li>Identificar y minimizar barreras de acceso</li>
+            <li>Estrategias de personalización multinivel</li>
+            <li>Lenguaje inclusivo y entornos seguros</li>
+          </ul>
+          <div class="acc-wrap">
+            <button class="acc-btn" onclick="toggleAcc(this)">
+              <div class="acc-avatar">
+                <img src="formadora_nuria_picas.jpg" alt="Núria Picas" onerror="this.style.display='none';this.parentNode.textContent='NP'">
+              </div>
+              <div class="acc-info"><strong>Núria Picas</strong><span>Conoce a la formadora ▾</span></div>
+              <span class="acc-arrow">▼</span>
+            </button>
+            <div class="acc-body">
+              <div class="acc-body-inner">
+                <div class="formador-header">
+                  <img src="formadora_nuria_picas.jpg" alt="Núria Picas" class="formador-foto-grande" onerror="this.outerHTML='<div class=\'formador-foto-placeholder\'>NP</div>'">
+                  <div>
+                    <span class="formador-nombre">Núria Picas</span>
+                    <span class="formador-cargo">Dinamizadora de Educación Inclusiva · Servicio Territorial Alt Pirineu i Aran</span>
+                  </div>
+                </div>
+                <p>Docente de ciencias sociales en la escuela pública, ha compaginado la docencia con la investigación sobre cultura democrática en las aulas y con la formación del profesorado. También ha trabajado en la Associació de Mestres de Rosa Sensat como técnica en el área de formación. Actualmente acompaña a docentes y centros educativos en el despliegue de la mirada inclusiva.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CURSO 2 -->
+      <div class="curso-card reveal">
+        <div class="curso-card-header">
+          <h3>Acompañamiento entre pares</h3>
+          <div class="etapa-tag">Cualquier etapa educativa</div>
+        </div>
+        <div class="curso-card-body">
+          <p>Cómo observarnos y darnos feedback de forma que sirva de verdad. Un curso para quienes creen que aprender con los compañeros y compañeras es una de las mejores formas de crecer.</p>
+          <ul class="obj-list">
+            <li>Ciclo de observación y feedback entre docentes</li>
+            <li>Guía para hacer observaciones de clase efectivas</li>
+            <li>Conversaciones que promuevan reflexión y crecimiento</li>
+            <li>Cómo construir una cultura de desarrollo profesional en el centro</li>
+          </ul>
+          <div class="acc-wrap">
+            <button class="acc-btn" onclick="toggleAcc(this)">
+              <div class="acc-avatar">
+                <img src="formadora_vicky_valls.jpg" alt="Vicky Valls" onerror="this.style.display='none';this.parentNode.textContent='VV'">
+              </div>
+              <div class="acc-info"><strong>Vicky Valls</strong><span>Conoce a la formadora ▾</span></div>
+              <span class="acc-arrow">▼</span>
+            </button>
+            <div class="acc-body">
+              <div class="acc-body-inner">
+                <div class="formador-header">
+                  <img src="formadora_vicky_valls.jpg" alt="Vicky Valls" class="formador-foto-grande" onerror="this.outerHTML='<div class=\'formador-foto-placeholder\'>VV</div>'">
+                  <div>
+                    <span class="formador-nombre">Vicky Valls</span>
+                    <span class="formador-cargo">Co-fundadora VIA Consultoría Educativa</span>
+                  </div>
+                </div>
+                <p>Psicóloga, docente y formadora. Es co-fundadora de VIA Consultoría Educativa, especializada en acompañar a docentes y directivos en liderazgo y transformación educativa en contextos de alta complejidad.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CURSO 3 -->
+      <div class="curso-card reveal">
+        <div class="curso-card-header">
+          <h3>Educación Ecosocial</h3>
+          <div class="etapa-tag">Secundaria · FP · Bachillerato</div>
+        </div>
+        <div class="curso-card-body">
+          <p>Para quienes sienten que la escuela no puede mirar hacia otro lado ante lo que está pasando. Un espacio para pensar cómo abordar la crisis ecosocial desde las aulas sin caer en el catastrofismo.</p>
+          <ul class="obj-list">
+            <li>Crisis sistémicas actuales y papel de la educación ecosocial</li>
+            <li>Narrativas esperanzadoras y movilizadoras</li>
+            <li>Horizontes deseables construidos colectivamente</li>
+          </ul>
+          <div class="acc-wrap">
+            <button class="acc-btn" onclick="toggleAcc(this)">
+              <div class="acc-avatar">
+                <img src="formador_alvaro_monso.jpg" alt="Álvaro Monsó" onerror="this.style.display='none';this.parentNode.textContent='ÁM'">
+              </div>
+              <div class="acc-info"><strong>Álvaro Monsó</strong><span>Conoce al formador ▾</span></div>
+              <span class="acc-arrow">▼</span>
+            </button>
+            <div class="acc-body">
+              <div class="acc-body-inner">
+                <div class="formador-header">
+                  <img src="formador_alvaro_monso.jpg" alt="Álvaro Monsó" class="formador-foto-grande" onerror="this.outerHTML='<div class=\'formador-foto-placeholder\'>ÁM</div>'">
+                  <div>
+                    <span class="formador-nombre">Álvaro Monsó</span>
+                    <span class="formador-cargo">Docente de FP · Co-coordinador de Educación en Ecologistas en Acción</span>
+                  </div>
+                </div>
+                <p>Licenciado en Ciencias Políticas, Álvaro se define primero como activista. Es docente de FP desde hace 9 años y co-coordinador estatal del área de Educación en Ecologistas en Acción. Se dedica a reflexionar sobre la transformación ecosocial desde el marco del ecologismo social.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CURSO 4 -->
+      <div class="curso-card reveal">
+        <div class="curso-card-header">
+          <h3>Gestión de Aula</h3>
+          <div class="etapa-tag">Infantil · Primaria · ESO · Bachillerato · FP</div>
+        </div>
+        <div class="curso-card-body">
+          <p>Uno de los temas más pedidos. Un curso práctico, sin humo, para entender qué hace que un aula funcione bien y cómo construirlo desde el primer día.</p>
+          <ul class="obj-list">
+            <li>Qué es la gestión de aula y su impacto real en los resultados</li>
+            <li>Gestión proactiva vs. reactiva</li>
+            <li>Planificación estructurada por grupos-clase</li>
+            <li>Sanciones y relación centro-familias</li>
+          </ul>
+          <div class="acc-wrap">
+            <button class="acc-btn" onclick="toggleAcc(this)">
+              <div class="acc-avatar">
+                <img src="formadoras_prodocentia.jpg" alt="Prodocentia" onerror="this.style.display='none';this.parentNode.textContent='PR'">
+              </div>
+              <div class="acc-info"><strong>Eva, Belén y Julia · Prodocentia</strong><span>Conoce a las formadoras ▾</span></div>
+              <span class="acc-arrow">▼</span>
+            </button>
+            <div class="acc-body">
+              <div class="acc-body-inner">
+                <span class="formador-nombre">Eva Mollinedo, Belén García-Izquierdo y Julia Cuevas</span>
+                <span class="formador-cargo" style="display:block;margin-bottom:.6rem;">Fundadoras de Prodocentia</span>
+                <p><strong>Eva Mollinedo:</strong> Graduada en Ciencias y Lenguas de la Antigüedad, coordinadora de Convivencia y Bienestar durante cuatro años en centros de alta complejidad.</p>
+                <p><strong>Belén García-Izquierdo:</strong> Arquitecta de formación reconvertida a la evaluación de proyectos educativos desde una perspectiva basada en evidencia.</p>
+                <p><strong>Julia Cuevas:</strong> Licenciada en Derecho y Empresariales, tutora de FP de Grado Básico en entornos vulnerables durante cinco años. Actualmente responsable del área social de una fundación.</p>
+                <p>Las tres fundaron <strong>Prodocentia</strong>, una asociación que lleva 4 años acompañando a comunidades educativas en entornos vulnerabilizados.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CURSO 5 -->
+      <div class="curso-card reveal">
+        <div class="curso-card-header">
+          <h3>Facilitación de espacios de aprendizaje</h3>
+          <div class="etapa-tag">Formadores · Universidad · Cualquier etapa</div>
+        </div>
+        <div class="curso-card-body">
+          <p>Para cualquier persona que facilite formación y quiera hacerlo mejor. Un curso que te hace pensar cómo aprendemos de verdad y cómo diseñar espacios donde eso ocurra.</p>
+          <ul class="obj-list">
+            <li>Principios fundamentales del aprendizaje</li>
+            <li>Decisiones intencionales al planificar y facilitar</li>
+            <li>Herramientas concretas para tus propios espacios</li>
+          </ul>
+          <div class="acc-wrap">
+            <button class="acc-btn" onclick="toggleAcc(this)">
+              <div class="acc-avatar">
+                <img src="formador_marco_chimini.jpg" alt="Marco Chimini" onerror="this.style.display='none';this.parentNode.textContent='MC'">
+              </div>
+              <div class="acc-info"><strong>Marco Chimini</strong><span>Conoce al formador ▾</span></div>
+              <span class="acc-arrow">▼</span>
+            </button>
+            <div class="acc-body">
+              <div class="acc-body-inner">
+                <div class="formador-header">
+                  <img src="formador_marco_chimini.jpg" alt="Marco Chimini" class="formador-foto-grande" onerror="this.outerHTML='<div class=\'formador-foto-placeholder\'>MC</div>'">
+                  <div>
+                    <span class="formador-nombre">Marco Chimini</span>
+                    <span class="formador-cargo">Consultor educativo · Equipo impulsor de Profest</span>
+                  </div>
+                </div>
+                <p>Graduado en Filosofía, Economía y Política. Ha sido docente de FP y de filosofía, y formador de docentes. Actualmente trabaja como consultor educativo en un proyecto de música para el cambio social y es parte del equipo impulsor del Profest.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CURSO 6 -->
+      <div class="curso-card reveal">
+        <div class="curso-card-header">
+          <h3>Acompañamiento a líderes educativos</h3>
+          <div class="etapa-tag">Coordinadores · Jefaturas · Direcciones de centro</div>
+        </div>
+        <div class="curso-card-body">
+          <p>Para quienes tienen algún tipo de responsabilidad de liderazgo en su centro y quieren tener herramientas reales para acompañar mejor a su equipo.</p>
+          <ul class="obj-list">
+            <li>Construir una cultura de equipo sólida y colaborativa</li>
+            <li>Reuniones más productivas y menos agotadoras</li>
+            <li>Retroalimentación como práctica cotidiana del centro</li>
+            <li>Estructuras sostenibles de mejora continua</li>
+          </ul>
+          <div class="acc-wrap">
+            <button class="acc-btn" onclick="toggleAcc(this)">
+              <div class="acc-avatar">
+                <img src="formadora_andrea_tormo.jpg" alt="Andrea Tormo" onerror="this.style.display='none';this.parentNode.textContent='AT'">
+              </div>
+              <div class="acc-info"><strong>Andrea Tormo</strong><span>Conoce a la formadora ▾</span></div>
+              <span class="acc-arrow">▼</span>
+            </button>
+            <div class="acc-body">
+              <div class="acc-body-inner">
+                <div class="formador-header">
+                  <img src="formadora_andrea_tormo.jpg" alt="Andrea Tormo" class="formador-foto-grande" onerror="this.outerHTML='<div class=\'formador-foto-placeholder\'>AT</div>'">
+                  <div>
+                    <span class="formador-nombre">Andrea Tormo</span>
+                    <span class="formador-cargo">Co-fundadora VIA Consultoría Educativa</span>
+                  </div>
+                </div>
+                <p>Arquitecta reconvertida al mundo educativo para, según sus palabras, "seguir diseñando, esta vez, estructuras invisibles que nos ayuden a caminar hacia la equidad". Es profesora, formadora de docentes y cofundadora de VIA Consultoría Educativa.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CURSO 7 -->
+      <div class="curso-card reveal">
+        <div class="curso-card-header">
+          <h3>Mindfulness en el aula</h3>
+          <div class="etapa-tag">Infantil · Primaria · ESO</div>
+        </div>
+        <div class="curso-card-body">
+          <p>Un curso vivencial. No solo para el alumnado: también para cuidar a las personas que enseñan. Técnicas de gestión emocional, relajación y atención plena adaptadas al contexto escolar.</p>
+          <ul class="obj-list">
+            <li>Herramientas para el bienestar docente</li>
+            <li>Técnicas de gestión emocional y relajación para el alumnado</li>
+            <li>Clima respetuoso y cultura de paz en el aula</li>
+          </ul>
+          <div class="acc-wrap">
+            <button class="acc-btn" onclick="toggleAcc(this)">
+              <div class="acc-avatar">
+                <img src="formadora_alicia_duran.jpg" alt="Alicia Durán" onerror="this.style.display='none';this.parentNode.textContent='AD'">
+              </div>
+              <div class="acc-info"><strong>Alicia Durán</strong><span>Conoce a la formadora ▾</span></div>
+              <span class="acc-arrow">▼</span>
+            </button>
+            <div class="acc-body">
+              <div class="acc-body-inner">
+                <div class="formador-header">
+                  <img src="formadora_alicia_duran.jpg" alt="Alicia Durán" class="formador-foto-grande" onerror="this.outerHTML='<div class=\'formador-foto-placeholder\'>AD</div>'">
+                  <div>
+                    <span class="formador-nombre">Alicia Durán</span>
+                    <span class="formador-cargo">Maestra · Fundadora de Mindfulness en la Escuela</span>
+                  </div>
+                </div>
+                <p>Graduada en Magisterio, es maestra en la escuela pública andaluza. Se ha formado como docente de yoga infantil y fundó la asociación de Mindfulness en la Escuela, dedicada a crear y difundir herramientas sobre gestión emocional, relajación y atención plena para el profesorado y el alumnado.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- TALLERES Y PILDORAS -->
+<section id="talleres">
+  <div class="section-inner">
+    <div class="section-tag reveal">Por las tardes</div>
+    <div class="section-title reveal">Talleres y píldoras</div>
+    <div class="talleres-flex">
+      <div class="taller-box reveal">
+        <h3>Talleres</h3>
+        <p>Espacios opcionales por las tardes para compartir buenas prácticas, debatir sobre temas que nos importan y conocer qué está pasando en otros centros y contextos.</p>
+      </div>
+      <div class="taller-box reveal">
+        <h3>Píldoras formativas</h3>
+        <p>Si quieres profundizar en algo concreto, las píldoras son sesiones más breves e intensivas sobre un tema específico. También opcionales.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ALOJAMIENTO -->
+<section id="alojamiento">
+  <div class="section-inner">
+    <div class="section-tag reveal">Alojamiento</div>
+    <div class="section-title reveal">Convivir es parte<br>de la experiencia.</div>
+    <div class="aloj-grid">
+      <div class="aloj-card reveal">
+        <h3>⛺ Zona de acampada libre</h3>
+        <p>Para tiendas de campaña. Con acceso a baños, duchas y fuentes de agua. La opción más comunitaria y la que más ambiente genera.</p>
+      </div>
+      <div class="aloj-card reveal">
+        <h3>🚐 Acampada en vehículo</h3>
+        <p>Zona habilitada para acampada en vehículo propio, con los mismos servicios. Ambas zonas tienen bares cerca.</p>
+      </div>
+      <div class="aloj-card reveal">
+        <h3>🏡 Alojamiento alternativo</h3>
+        <p>Si la acampada no es lo tuyo, hay apartamentos, casas rurales y posadas en el pueblo y alrededores. Recomendamos reservar pronto.</p>
+      </div>
+      <div class="aloj-card reveal">
+        <h3>¿Necesitas ayuda?</h3>
+        <p>Si quieres que te echemos una mano para encontrar alojamiento, escríbenos sin problema: <strong style="color:var(--amarillo)">somosasociacionpupitre@gmail.com</strong></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INSCRIPCION -->
+<section id="inscripcion">
+  <div class="section-inner">
+    <div class="section-tag reveal">Inscripción</div>
+    <div class="section-title reveal" style="color:var(--verde-dark)">Elige la tarifa<br>que se ajuste a ti.</div>
+    <p class="inscripcion-intro reveal">Somos conscientes de que no todo el mundo llega igual de agosto. Por eso proponemos tarifas a medida, con la confianza de que cada persona elija la suya de forma consciente y corresponsable. El encuentro tiene que ser sostenible para quienes lo hacen posible y accesible para quien quiera venir.</p>
+    <div class="tarifas-grid">
+      <div class="tarifa-card media reveal">
+        <div class="tarifa-badge">La más habitual</div>
+        <div class="tarifa-nombre">Tarifa media</div>
+        <div class="tarifa-precio">298€</div>
+        <div class="tarifa-desc">Para quienes pueden permitirse el coste completo del encuentro.</div>
+      </div>
+      <div class="tarifa-card precaria reveal">
+        <div class="tarifa-badge" style="background:var(--verde);color:white;">Plazas limitadas</div>
+        <div class="tarifa-nombre" style="color:var(--verde-dark)">Tarifa precaria</div>
+        <div class="tarifa-precio">249€</div>
+        <div class="tarifa-desc" style="color:var(--gris)">Para quienes no podrían permitirse venir de otra manera pero tienen muchas ganas de estar.</div>
+      </div>
+      <div class="tarifa-card desahogada reveal">
+        <div class="tarifa-nombre" style="color:var(--verde-dark)">Tarifa desahogada</div>
+        <div class="tarifa-precio">330€</div>
+        <div class="tarifa-desc" style="color:var(--verde-dark)">Para quienes están en posición de contribuir un poco más y quieren que el proyecto salga adelante.</div>
+      </div>
+      <div class="tarifa-card local reveal">
+        <div class="tarifa-badge">Plazas limitadas</div>
+        <div class="tarifa-nombre">Tarifa local</div>
+        <div class="tarifa-precio">225€</div>
+        <div class="tarifa-desc">Para habitantes y docentes de Castronuño. Queremos que la gente del pueblo forme parte de esto.</div>
+      </div>
+    </div>
+    <div class="inscripcion-incluye reveal">
+      <h4>Todas las tarifas incluyen:</h4>
+      <p>Curso intensivo en grupo reducido · Zona de acampada · Desayuno, comida y cena · Zona de parking · Mañanas activas · Talleres y píldoras · Actividades de ocio</p>
+    </div>
+    <div class="inscripcion-cta reveal">
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSeuhp2MdthsTNxEZMAJ-akljXur0xn9qDnqH8Z8Jkkp1i8pVQ/viewform?usp=preview" target="_blank" class="inscripcion-btn">¡Quiero reservar mi plaza! →</a>
+    </div>
+  </div>
+</section>
+
+<!-- EQUIPO -->
+<section id="equipo">
+  <div class="section-inner">
+    <div class="section-tag reveal">Quiénes somos</div>
+    <div class="section-title reveal">El equipo<br>impulsor.</div>
+    <p style="color:rgba(255,255,255,.8);margin-bottom:2rem;font-size:1rem;line-height:1.7;" class="reveal">La <strong style="color:var(--amarillo)">Asociación Pupitre</strong> promueve la mejora pedagógica en contextos rurales y socialmente vulnerabilizados. Lo hacemos a través de formaciones, acompañamiento, material audiovisual y espacios de encuentro como este.</p>
+    <div class="equipo-grid">
+      <div class="equipo-card reveal">
+        <div class="equipo-avatar">
+          <img src="equipo_maria_roman.jpg" alt="María Román" onerror="this.outerHTML='MR'">
+        </div>
+        <h3>María Román</h3>
+        <p>Maestra con más de 10 años de experiencia. Forma y acompaña a docentes con foco en la equidad educativa.</p>
+      </div>
+      <div class="equipo-card reveal">
+        <div class="equipo-avatar">
+          <img src="equipo_carlos_aceituno.jpg" alt="Carlos Aceituno" onerror="this.outerHTML='CA'">
+        </div>
+        <h3>Carlos Aceituno</h3>
+        <p>Ingeniero reconvertido a profesor de secundaria y formador docente. Doctorando en Educación, Ciencia y Tecnología en la UPM.</p>
+      </div>
+      <div class="equipo-card reveal">
+        <div class="equipo-avatar">
+          <img src="equipo_david_perezagua.jpg" alt="David Perezagua" onerror="this.outerHTML='DP'">
+        </div>
+        <h3>David Perezagua</h3>
+        <p>Físico y divulgador científico. Docente en la escuela pública y en el grado de Magisterio de la UAM.</p>
+      </div>
+      <div class="equipo-card reveal">
+        <div class="equipo-avatar">
+          <img src="equipo_marco_chimini.jpg" alt="Marco Chimini" onerror="this.outerHTML='MC'">
+        </div>
+        <h3>Marco Chimini</h3>
+        <p>Formador de docentes y consultor educativo en proyectos de música para el cambio social.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DESDE DONDE -->
+<section id="desde-donde">
+  <div class="section-inner">
+    <div class="section-tag reveal">Por qué en un pueblo</div>
+    <div class="section-title reveal">Desde lo rural,<br>para la educación.</div>
+    <div class="desde-flex">
+      <div class="desde-text reveal">
+        <p>Elegir un pueblo no es casualidad. Es una postura. Las zonas rurales han perdido población, servicios y visibilidad. PROFEST quiere contribuir a revertir eso, aunque sea un poco.</p>
+        <p>Traer formación de calidad al medio rural, generar actividad local y demostrar que se puede aprender bien y pasarlo bien fuera de una gran ciudad.</p>
+      </div>
+      <div class="desde-quote reveal">
+        Desde lo rural promovemos el desarrollo profesional del profesorado, la innovación local y la colaboración entre actores del territorio. Los pueblos son espacios de futuro, talento y bienestar.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="section-inner">
+    <div class="section-tag reveal">Preguntas frecuentes</div>
+    <div class="section-title reveal" style="color:var(--verde-dark)">¿Tienes dudas?<br>Normal.</div>
+    <div class="faq-list">
+
+      <div class="faq-item reveal">
+        <button class="faq-btn" onclick="toggleFaq(this)">
+          <span class="faq-question">¿Necesito mucha experiencia para asistir?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">No. PROFEST está pensado tanto para docentes con trayectoria como para quienes están empezando. Si tienes inquietud por mejorar tu práctica y formar parte de una comunidad profesional, este encuentro es para ti.</div>
+        </div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-btn" onclick="toggleFaq(this)">
+          <span class="faq-question">¿Puedo ir sola o solo?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Sí. Y de hecho, muchas personas vienen sin conocer a nadie. La convivencia, los grupos reducidos y las actividades comunitarias están diseñadas precisamente para que eso no sea un problema, sino todo lo contrario.</div>
+        </div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-btn" onclick="toggleFaq(this)">
+          <span class="faq-question">¿Qué pasa si no quiero acampar?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">La acampada forma parte de la experiencia comunitaria, pero no es obligatoria. Puedes alojarte en apartamentos, casas rurales o posadas en el pueblo o alrededores. Recomendamos reservar con antelación. Escríbenos si necesitas ayuda con esto.</div>
+        </div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-btn" onclick="toggleFaq(this)">
+          <span class="faq-question">¿Los talleres y actividades son obligatorios?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">No. Queremos equilibrio entre aprendizaje y descanso. Las mañanas intensivas sí forman parte del curso que hayas elegido. Las tardes y actividades comunitarias son opcionales: puedes ir a lo que quieras o simplemente descansar.</div>
+        </div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-btn" onclick="toggleFaq(this)">
+          <span class="faq-question">¿Recibiré algún certificado?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Sí. Se entregará certificado de participación correspondiente a las horas de formación del curso intensivo.</div>
+        </div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-btn" onclick="toggleFaq(this)">
+          <span class="faq-question">¿Qué diferencia a PROFEST de otros congresos educativos?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            PROFEST combina cosas que normalmente no van juntas:
+            <ul>
+              <li>Formación rigurosa en grupo reducido</li>
+              <li>Convivencia real</li>
+              <li>Espacios de bienestar y descanso</li>
+              <li>Entorno rural elegido conscientemente</li>
+              <li>Red profesional que continúa más allá del evento</li>
+            </ul>
+            No vienes a escuchar ponencias. Vienes a formar parte de algo.
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-btn" onclick="toggleFaq(this)">
+          <span class="faq-question">¿Las plazas son limitadas?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Sí. Trabajamos con grupos reducidos para cuidar la calidad de la formación y la experiencia comunitaria. Cuando se completen las plazas de cada curso, se cerrará la inscripción.</div>
+        </div>
+      </div>
+
+      <div class="faq-item reveal">
+        <button class="faq-btn" onclick="toggleFaq(this)">
+          <span class="faq-question">¿Puedo elegir tarifa según mi situación económica?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">Sí. Confiamos en una elección consciente y corresponsable. Queremos que el encuentro sea accesible y, al mismo tiempo, sostenible para quienes lo hacen posible.</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="faq-cta-box reveal">
+      <h3>¿Te unes a la comunidad?</h3>
+      <p>Empieza el curso con red, claridad y propósito.</p>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSeuhp2MdthsTNxEZMAJ-akljXur0xn9qDnqH8Z8Jkkp1i8pVQ/viewform?usp=preview" target="_blank" class="faq-cta-btn">👉 Quiero reservar mi plaza en PROFEST 2026</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto">
+  <div class="section-inner">
+    <div class="section-tag reveal">Contacto</div>
+    <div class="section-title reveal">¿Hablamos?</div>
+    <div class="contacto-grid">
+      <a href="mailto:somosasociacionpupitre@gmail.com" class="contacto-item reveal">
+        <div class="ci-icon">✉️</div>
+        <div class="ci-label">Correo electrónico</div>
+        <div class="ci-value">somosasociacionpupitre@gmail.com</div>
+      </a>
+      <a href="https://instagram.com/profest_oficial" target="_blank" class="contacto-item reveal">
+        <div class="ci-icon">📸</div>
+        <div class="ci-label">Redes sociales</div>
+        <div class="ci-value">@profest_oficial</div>
+      </a>
+      <a href="tel:608525279" class="contacto-item reveal">
+        <div class="ci-icon">📞</div>
+        <div class="ci-label">Teléfono</div>
+        <div class="ci-value">608 525 279</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
 <footer>
-  PROFEST! · Asociación Pupitre · 2026
+  <strong>PROFEST!</strong> · (Re)Encuentro Educativo · Asociación Pupitre · 2026<br>
+  <span style="font-size:.75rem;">somosasociacionpupitre@gmail.com · 608 525 279 · @profest_oficial</span>
 </footer>
 
+<script>
+  function toggleAcc(btn) {
+    var body = btn.nextElementSibling;
+    var arrow = btn.querySelector('.acc-arrow');
+    var isOpen = body.classList.contains('open');
+    body.classList.toggle('open', !isOpen);
+    arrow.classList.toggle('open', !isOpen);
+  }
+
+  function toggleFaq(btn) {
+    var answer = btn.nextElementSibling;
+    var icon = btn.querySelector('.faq-icon');
+    var isOpen = answer.classList.contains('open');
+    answer.classList.toggle('open', !isOpen);
+    icon.classList.toggle('open', !isOpen);
+    icon.textContent = isOpen ? '+' : 'x';
+  }
+
+  var reveals = document.querySelectorAll('.reveal');
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry, i) {
+      if (entry.isIntersecting) {
+        entry.target.style.transitionDelay = (i % 4) * 0.08 + 's';
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(function(el) { observer.observe(el); });
+</script>
 </body>
 </html>
