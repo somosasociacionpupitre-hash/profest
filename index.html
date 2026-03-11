@@ -88,12 +88,20 @@ section { padding: 5rem 1.5rem; }
 /* COMO FUNCIONA */
 #como { background: var(--crema); }
 #como .section-title { color: var(--verde-dark); }
-.como-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1.2rem; margin-top: 2rem; }
+.como-layout { display: flex; gap: 2.5rem; align-items: flex-start; flex-wrap: wrap; margin-top: 2rem; }
+.como-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1.2rem; flex: 1; min-width: 280px; }
 .como-item { background: white; border-radius: 20px; padding: 1.5rem 1.2rem; text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,.06); border-top: 4px solid var(--rosa); transition: transform .2s; }
 .como-item:hover { transform: translateY(-4px); }
 .como-item .emoji { font-size: 2.2rem; margin-bottom: .8rem; }
 .como-item h4 { font-family: 'Baloo 2', cursive; font-weight: 800; color: var(--verde-dark); margin-bottom: .4rem; font-size: 1.05rem; }
 .como-item p { font-family: 'Nunito', sans-serif; font-size: .83rem; color: var(--gris); line-height: 1.5; }
+.horario-mini { flex: 0 0 260px; background: var(--verde-dark); border-radius: 20px; padding: 1.8rem; color: var(--blanco); box-shadow: 0 8px 30px rgba(0,0,0,.15); }
+.horario-mini h4 { font-family: 'Baloo 2', cursive; font-weight: 800; font-size: 1.3rem; color: var(--rosa); letter-spacing: 1px; margin-bottom: 1.2rem; }
+.h-item { display: flex; gap: .8rem; align-items: baseline; padding: .5rem 0; border-bottom: 1px solid rgba(255,255,255,.1); font-size: .83rem; }
+.h-item:last-child { border-bottom: none; }
+.h-time { color: var(--rosa); font-family: 'Baloo 2', cursive; font-weight: 700; min-width: 80px; font-size: .78rem; flex-shrink: 0; }
+.h-desc { font-family: 'Nunito', sans-serif; color: rgba(255,255,255,.85); line-height: 1.4; }
+@media (max-width: 768px) { .como-layout { flex-direction: column; } .horario-mini { flex: unset; width: 100%; } }
 
 /* CURSOS */
 #cursos { background: var(--verde-dark); }
@@ -191,7 +199,7 @@ section { padding: 5rem 1.5rem; }
 .desde-flex { display: flex; gap: 3rem; align-items: center; flex-wrap: wrap; margin-top: 2rem; }
 .desde-text { flex: 1; min-width: 260px; }
 .desde-text p { font-family: 'Playfair Display', serif; font-size: 1rem; color: var(--negro-suave); line-height: 1.9; margin-bottom: 1rem; }
-.desde-quote { flex: 0 0 300px; background: var(--verde-dark); border-radius: 20px; padding: 2rem; color: var(--blanco); font-family: 'Playfair Display', serif; font-style: italic; font-size: 1rem; line-height: 1.9; }
+.desde-quote { flex: 0 0 300px; background: var(--verde-dark); border-radius: 20px; padding: 2rem; color: var(--blanco); font-family: 'Nunito', sans-serif; font-weight: 700; font-size: 1rem; line-height: 1.8; }
 @media (max-width: 768px) { .desde-flex { flex-direction: column; } .desde-quote { flex: unset; width: 100%; } }
 
 /* FAQ */
@@ -249,7 +257,7 @@ footer strong { color: var(--rosa); font-family: 'Baloo 2', cursive; }
     <li><a href="#cursos">Cursos</a></li>
     <li><a href="#tarifas">Tarifas</a></li>
     <li><a href="#faq">FAQ</a></li>
-    <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSeuhp2MdthsTNxEZMAJ-akljXur0xn9qDnqH8Z8Jkkp1i8pVQ/viewform?usp=preview" target="_blank" class="nav-cta">Me apunto!</a></li>
+    <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSeuhp2MdthsTNxEZMAJ-akljXur0xn9qDnqH8Z8Jkkp1i8pVQ/viewform?usp=preview" target="_blank" class="nav-cta">¡Me apunto!</a></li>
   </ul>
 </nav>
 
@@ -302,8 +310,7 @@ footer strong { color: var(--rosa); font-family: 'Baloo 2', cursive; }
     <div class="section-title reveal" style="color:var(--verde-dark)">Si te mueve la educación,<br>este espacio es tuyo.</div>
     <div class="para-quien-grid">
       <div class="para-quien-item reveal"><div class="icon">&#128105;&#8205;&#127979;</div>Docentes de cualquier etapa educativa</div>
-      <div class="para-quien-item reveal"><div class="icon">&#127979;</div>Líderes de centros educativos <br>
-        <div class="que-es-card reveal">(directoras, jefes de estudios, coordinadoras·es de etapa...)</div></div>
+      <div class="para-quien-item reveal"><div class="icon">&#127979;</div>Líderes de centros educativos<br><span style="font-weight:400;font-size:.85rem;opacity:.85;">(directoras, jefes de estudios, coordinadoras·es de etapa...)</span></div>
       <div class="para-quien-item reveal"><div class="icon">&#127891;</div>Estudiantes de carrera o máster en docencia</div>
       <div class="para-quien-item reveal"><div class="icon">&#127757;</div>Educadores del ámbito no formal</div>
     </div>
@@ -324,7 +331,7 @@ footer strong { color: var(--rosa); font-family: 'Baloo 2', cursive; }
         <div class="info-pill">&#128197; Del 24 al 28 de agosto de 2026</div>
         <div class="info-pill">&#128205; Castronuno, Valladolid</div>
         <p class="cuando-desc">Castronuno tiene todo lo que necesitas para pasar el verano: una playa fluvial en la que esta permitido el
-          baño, un complejo acuático, una piscina. Además, es un enclave unico para la observacion de aves y las rutas de senderismo, 
+          baño, un complejo acuático, una piscina. Además, es un enclave único para la observación de aves y las rutas de senderismo, 
           en medio de una reserva natural. ¡Ah! Importante... y por la noche refresca ;)</p>
       </div>
       <div class="cuando-foto">
@@ -338,26 +345,39 @@ footer strong { color: var(--rosa); font-family: 'Baloo 2', cursive; }
   <div class="section-inner">
     <div class="section-tag reveal">¿Cómo funciona?</div>
     <div class="section-title reveal" style="color:var(--verde-dark)">Cuatro días con ritmo,<br>sin agobios.</div>
-    <div class="como-grid">
-      <div class="como-item reveal">
-        <div class="emoji">&#129504;</div>
-        <h4>Curso intensivo</h4>
-        <p>Formación practica con metodologias activas cada manana. 12 horas en total.</p>
+    <div class="como-layout">
+      <div class="como-grid">
+        <div class="como-item reveal">
+          <div class="emoji">&#129504;</div>
+          <h4>Curso intensivo</h4>
+          <p>Formación práctica con metodologías activas cada mañana. 12 horas en total.</p>
+        </div>
+        <div class="como-item reveal">
+          <div class="emoji">&#127912;</div>
+          <h4>Talleres</h4>
+          <p>Espacios opcionales para explorar distintas áreas por las tardes.</p>
+        </div>
+        <div class="como-item reveal">
+          <div class="emoji">&#127749;</div>
+          <h4>Mañanas activas</h4>
+          <p>Propuestas opcionales de bienestar físico y emocional al despertar.</p>
+        </div>
+        <div class="como-item reveal">
+          <div class="emoji">&#129309;</div>
+          <h4>Tejer redes y ocio</h4>
+          <p>Actividades para conocer y conectar con gente y disfrutar del verano en el pueblo.</p>
+        </div>
       </div>
-      <div class="como-item reveal">
-        <div class="emoji">&#127912;</div>
-        <h4>Talleres</h4>
-        <p>Espacios opcionales para explorar distintas áreas por las tardes.</p>
-      </div>
-      <div class="como-item reveal">
-        <div class="emoji">&#127749;</div>
-        <h4>Mañanas activas</h4>
-        <p>Propuestas opcionales de bienestar físico y emocional al despertar.</p>
-      </div>
-      <div class="como-item reveal">
-        <div class="emoji">&#129309;</div>
-        <h4>Tejer redes y ocio</h4>
-        <p>Actividades para conocer y conectar con gente y disfrutar del verano en el pueblo.</p>
+      <div class="horario-mini reveal">
+        <h4>Horario tipo</h4>
+        <div class="h-item"><span class="h-time">8:00</span><span class="h-desc">Mañana activa (opcional)</span></div>
+        <div class="h-item"><span class="h-time">9:00</span><span class="h-desc">Desayuno</span></div>
+        <div class="h-item"><span class="h-time">10:00 – 14:00</span><span class="h-desc">Curso intensivo</span></div>
+        <div class="h-item"><span class="h-time">14:00</span><span class="h-desc">Comida</span></div>
+        <div class="h-item"><span class="h-time">15:30 – 17:00</span><span class="h-desc">Tiempo libre</span></div>
+        <div class="h-item"><span class="h-time">17:00 – 19:00</span><span class="h-desc">Talleres (opcional)</span></div>
+        <div class="h-item"><span class="h-time">21:00</span><span class="h-desc">Cena</span></div>
+        <div class="h-item"><span class="h-time">22:30</span><span class="h-desc">Ocio y comunidad</span></div>
       </div>
     </div>
   </div>
@@ -368,220 +388,266 @@ footer strong { color: var(--rosa); font-family: 'Baloo 2', cursive; }
   <div class="section-inner">
     <div class="section-tag reveal">Propuesta formativa</div>
     <div class="section-title reveal">7 cursos.<br>Tú eliges el tuyo.</div>
-    <p class="reveal">Al inscribirte al Profest, elegirás un curso al que asistir durante las mananas del encuentro. 
-      <strong style="color:var(--rosa)">12 horas de formación en total</strong> en grupos reducidos y con metodologías 
-      activas en busca de un aprendizaje significativo. Nada de escuchar sentado. <strong style="color:var(--rosa)">
-        Venimos a aprender haciendo.</strong></p>
+    <p class="reveal">Al inscribirte eliges un curso al que asistir cada mañana. Son <strong style="color:var(--rosa)">12 horas en total</strong>, en grupos reducidos y con metodologías activas. Nada de escuchar sentado. Venimos a aprender haciendo.</p>
     <br>
     <div class="cursos-grid">
 
+      <!-- CURSO 1 -->
       <div class="curso-card reveal">
         <div class="curso-card-header">
           <h3>Educación Inclusiva</h3>
-          <div class="etapa-tag">Primaria - Secundaria - FP - Postobligatoria</div>
+          <div class="etapa-tag">Primaria · Secundaria · FP · Postobligatoria</div>
         </div>
         <div class="curso-card-body">
-          <p>Aprende a crear entornos educativos desafiantes que favorezcan la participacion y el progreso de todo el alumnado en el marco de un sistema educativo inclusivo.</p>
+          <p>Aprender a crear entornos donde todo el alumnado pueda participar y progresar de verdad. Con herramientas concretas para llevar al aula el lunes.</p>
           <ul class="obj-list">
-            <li>Analizar el concepto de educacion inclusiva desde presencia, participacion y progreso</li>
-            <li>Conocer los principios del Diseno Universal para el Aprendizaje (DUA)</li>
-            <li>Identificar y minimizar barreras de acceso y participacion</li>
-            <li>Estrategias de personalizacion multinivel y gestion de aula flexible</li>
-            <li>Lenguaje inclusivo y entornos seguros y respetuosos</li>
+            <li>Educación inclusiva desde las dimensiones de presencia, participación y progreso</li>
+            <li>Diseño Universal para el Aprendizaje (DUA)</li>
+            <li>Identificar y minimizar barreras de acceso</li>
+            <li>Estrategias de personalización multinivel</li>
+            <li>Lenguaje inclusivo y entornos seguros</li>
           </ul>
           <div class="acc-wrap">
             <button class="acc-btn" onclick="toggleAcc(this)">
-              <div class="acc-avatar">NP</div>
-              <div class="acc-info"><strong>Nuria Picas</strong><span>Conoce a la formadora</span></div>
-              <span class="acc-arrow">&#9660;</span>
+              <div class="acc-avatar">
+                <img src="formadora_nuria_picas.jpg" alt="Núria Picas" onerror="this.style.display='none';this.parentNode.textContent='NP'">
+              </div>
+              <div class="acc-info"><strong>Núria Picas</strong><span>Conoce a la formadora ▾</span></div>
+              <span class="acc-arrow">▼</span>
             </button>
             <div class="acc-body">
               <div class="acc-body-inner">
-                <div class="formador-foto-placeholder">NP</div>
-                <span class="formador-nombre">Nuria Picas</span>
-                <p>Docente de ciencias sociales en la escuela publica, ha compaginado la docencia con la investigacion sobre cultura democratica en las aulas y con la formacion del profesorado. Tambien ha trabajado en la Associacio de Mestres de Rosa Sensat como tecnica en el area de formacion del profesorado. Actualmente es Dinamizadora de Educacion Inclusiva en el Servicio Territorial del Alt Pirineu i Aran, una figura que acompana a docentes y centros educativos en el despliegue de la mirada inclusiva.</p>
+                <div class="formador-header">
+                  <img src="formadora_nuria_picas.jpg" alt="Núria Picas" class="formador-foto-grande" onerror="this.outerHTML='<div class=\'formador-foto-placeholder\'>NP</div>'">
+                  <div>
+                    <span class="formador-nombre">Núria Picas</span>
+                    <span class="formador-cargo">Dinamizadora de Educación Inclusiva · Servicio Territorial Alt Pirineu i Aran</span>
+                  </div>
+                </div>
+                <p>Docente de ciencias sociales en la escuela pública, ha compaginado la docencia con la investigación sobre cultura democrática en las aulas y con la formación del profesorado. También ha trabajado en la Associació de Mestres de Rosa Sensat como técnica en el área de formación. Actualmente acompaña a docentes y centros educativos en el despliegue de la mirada inclusiva.</p>
               </div>
             </div>
           </div>
         </div>
       </div>
 
+      <!-- CURSO 2 -->
       <div class="curso-card reveal">
         <div class="curso-card-header">
-          <h3>Acompanamiento entre pares</h3>
+          <h3>Acompañamiento entre pares</h3>
           <div class="etapa-tag">Cualquier etapa educativa</div>
         </div>
         <div class="curso-card-body">
-          <p>Comprende y aplica el ciclo de la observacion y el feedback como herramienta clave para acompanar la practica entre docentes, promoviendo conversaciones de mejora rigurosas, reflexivas y alineadas con una cultura de desarrollo profesional continuo.</p>
+          <p>Cómo observarnos y darnos feedback de forma que sirva de verdad. Un curso para quienes creen que aprender con los compañeros y compañeras es una de las mejores formas de crecer.</p>
           <ul class="obj-list">
-            <li>Fases del ciclo de observacion y feedback y sus retos mas frecuentes</li>
-            <li>Guia y estructura para hacer observaciones de clase efectivas</li>
-            <li>Conversaciones de feedback que promuevan la reflexion y el crecimiento</li>
-            <li>Como implantar una cultura de observacion y feedback en el centro</li>
+            <li>Ciclo de observación y feedback entre docentes</li>
+            <li>Guía para hacer observaciones de clase efectivas</li>
+            <li>Conversaciones que promuevan reflexión y crecimiento</li>
+            <li>Cómo construir una cultura de desarrollo profesional en el centro</li>
           </ul>
           <div class="acc-wrap">
             <button class="acc-btn" onclick="toggleAcc(this)">
-              <div class="acc-avatar">VV</div>
-              <div class="acc-info"><strong>Vicky Valls</strong><span>Conoce a la formadora</span></div>
-              <span class="acc-arrow">&#9660;</span>
+              <div class="acc-avatar">
+                <img src="formadora_vicky_valls.jpg" alt="Vicky Valls" onerror="this.style.display='none';this.parentNode.textContent='VV'">
+              </div>
+              <div class="acc-info"><strong>Vicky Valls</strong><span>Conoce a la formadora ▾</span></div>
+              <span class="acc-arrow">▼</span>
             </button>
             <div class="acc-body">
               <div class="acc-body-inner">
-                <div class="formador-foto-placeholder">VV</div>
-                <span class="formador-nombre">Vicky Valls</span>
-                <p>Psicologa, docente y formadora. Es co-fundadora de VIA Consultoria Educativa, especializada en acompanar a docentes y directivos en liderazgo y transformacion educativa en contextos de alta complejidad.</p>
+                <div class="formador-header">
+                  <img src="formadora_vicky_valls.jpg" alt="Vicky Valls" class="formador-foto-grande" onerror="this.outerHTML='<div class=\'formador-foto-placeholder\'>VV</div>'">
+                  <div>
+                    <span class="formador-nombre">Vicky Valls</span>
+                    <span class="formador-cargo">Co-fundadora VIA Consultoría Educativa</span>
+                  </div>
+                </div>
+                <p>Psicóloga, docente y formadora. Es co-fundadora de VIA Consultoría Educativa, especializada en acompañar a docentes y directivos en liderazgo y transformación educativa en contextos de alta complejidad.</p>
               </div>
             </div>
           </div>
         </div>
       </div>
 
+      <!-- CURSO 3 -->
       <div class="curso-card reveal">
         <div class="curso-card-header">
-          <h3>Educacion Ecosocial</h3>
-          <div class="etapa-tag">Secundaria - FP - Bachillerato</div>
+          <h3>Educación Ecosocial</h3>
+          <div class="etapa-tag">Secundaria · FP · Bachillerato</div>
         </div>
         <div class="curso-card-body">
-          <p>Herramientas para abordar las causas, consecuencias y respuestas a algunas de las crisis ecologicas y sociales, generando imaginarios y narrativas esperanzadoras y movilizadoras.</p>
+          <p>Para quienes sienten que la escuela no puede mirar hacia otro lado ante lo que está pasando. Un espacio para pensar cómo abordar la crisis ecosocial desde las aulas sin caer en el catastrofismo.</p>
           <ul class="obj-list">
-            <li>Causas y consecuencias de las multiples crisis sistemicas actuales</li>
-            <li>El papel de la educacion ecosocial en articular respuestas desde las aulas</li>
-            <li>Construir colectivamente horizontes ecosociales deseables y una esperanza realista</li>
+            <li>Crisis sistémicas actuales y papel de la educación ecosocial</li>
+            <li>Narrativas esperanzadoras y movilizadoras</li>
+            <li>Horizontes deseables construidos colectivamente</li>
           </ul>
           <div class="acc-wrap">
             <button class="acc-btn" onclick="toggleAcc(this)">
-              <div class="acc-avatar">AM</div>
-              <div class="acc-info"><strong>Alvaro Monso</strong><span>Conoce al formador</span></div>
-              <span class="acc-arrow">&#9660;</span>
+              <div class="acc-avatar">
+                <img src="formador_alvaro_monso.jpg" alt="Álvaro Monsó" onerror="this.style.display='none';this.parentNode.textContent='ÁM'">
+              </div>
+              <div class="acc-info"><strong>Álvaro Monsó</strong><span>Conoce al formador ▾</span></div>
+              <span class="acc-arrow">▼</span>
             </button>
             <div class="acc-body">
               <div class="acc-body-inner">
-                <div class="formador-foto-placeholder">AM</div>
-                <span class="formador-nombre">Alvaro Monso</span>
-                <p>Licenciado en Ciencias Politicas, Alvaro se define primero como activista. Es docente de FP desde hace 9 anos y actualmente es el co-coordinador estatal del area Educacion en Ecologistas en Accion. Se dedica a reflexionar sobre la transformacion ecosocial desde el marco del ecologismo social.</p>
+                <div class="formador-header">
+                  <img src="formador_alvaro_monso.jpg" alt="Álvaro Monsó" class="formador-foto-grande" onerror="this.outerHTML='<div class=\'formador-foto-placeholder\'>ÁM</div>'">
+                  <div>
+                    <span class="formador-nombre">Álvaro Monsó</span>
+                    <span class="formador-cargo">Docente de FP · Co-coordinador de Educación en Ecologistas en Acción</span>
+                  </div>
+                </div>
+                <p>Licenciado en Ciencias Políticas, Álvaro se define primero como activista. Es docente de FP desde hace 9 años y co-coordinador estatal del área de Educación en Ecologistas en Acción. Se dedica a reflexionar sobre la transformación ecosocial desde el marco del ecologismo social.</p>
               </div>
             </div>
           </div>
         </div>
       </div>
 
+      <!-- CURSO 4 -->
       <div class="curso-card reveal">
         <div class="curso-card-header">
-          <h3>Gestion de Aula</h3>
-          <div class="etapa-tag">Infantil - Primaria - ESO - Bachillerato - FP</div>
+          <h3>Gestión de Aula</h3>
+          <div class="etapa-tag">Infantil · Primaria · ESO · Bachillerato · FP</div>
         </div>
         <div class="curso-card-body">
-          <p>Comprende los beneficios y adquiere herramientas para aplicar una Gestion de Aula efectiva que mejore el rendimiento y los resultados academicos.</p>
+          <p>Uno de los temas más pedidos. Un curso práctico, sin humo, para entender qué hace que un aula funcione bien y cómo construirlo desde el primer día.</p>
           <ul class="obj-list">
-            <li>Definir que es la gestion de aula y su correlacion con los resultados</li>
-            <li>Diferenciar gestion proactiva vs. reactiva</li>
-            <li>Fundamentos del funcionamiento de tecnicas de GdA</li>
-            <li>Planificacion estructurada y progresiva por grupos-clase</li>
-            <li>Sanciones y relacion centro-familias</li>
+            <li>Qué es la gestión de aula y su impacto real en los resultados</li>
+            <li>Gestión proactiva vs. reactiva</li>
+            <li>Planificación estructurada por grupos-clase</li>
+            <li>Sanciones y relación centro-familias</li>
           </ul>
           <div class="acc-wrap">
             <button class="acc-btn" onclick="toggleAcc(this)">
-              <div class="acc-avatar">PR</div>
-              <div class="acc-info"><strong>Eva, Belen y Julia - Prodocentia</strong><span>Conoce a las formadoras</span></div>
-              <span class="acc-arrow">&#9660;</span>
+              <div class="acc-avatar">
+                <img src="formadoras_prodocentia.jpg" alt="Prodocentia" onerror="this.style.display='none';this.parentNode.textContent='PR'">
+              </div>
+              <div class="acc-info"><strong>Eva, Belén y Julia · Prodocentia</strong><span>Conoce a las formadoras ▾</span></div>
+              <span class="acc-arrow">▼</span>
             </button>
             <div class="acc-body">
               <div class="acc-body-inner">
-                <span class="formador-nombre">Eva Mollinedo, Belen Garcia-Izquierdo y Julia Cuevas</span>
-                <p><strong>Eva Mollinedo:</strong> Graduada en Ciencias y Lenguas de la Antiguedad, ha trabajado en centros de alta complejidad, siendo coordinadora de Convivencia y Bienestar durante cuatro anos.</p>
-                <p><strong>Belen Garcia-Izquierdo:</strong> Arquitecta de formacion, oriento su carrera hacia un proposito social, trabajando en distintos paises y organizaciones. Actualmente analiza y evalua proyectos educativos desde una perspectiva basada en la evidencia.</p>
-                <p><strong>Julia Cuevas:</strong> Licenciada en Derecho y Empresariales, colaboro en la creacion de una escuela en Mathare (Nairobi), fue tutora de FP de Grado Basico en entornos vulnerables durante cinco anos. Actualmente es responsable del area social de una fundacion.</p>
-                <p>Las tres son fundadoras de <strong>Prodocentia</strong>, una asociacion que lleva 4 anos acompanando a agentes educativos en entornos vulnerabilizados.</p>
+                <span class="formador-nombre">Eva Mollinedo, Belén García-Izquierdo y Julia Cuevas</span>
+                <span class="formador-cargo" style="display:block;margin-bottom:.6rem;">Fundadoras de Prodocentia</span>
+                <p><strong>Eva Mollinedo:</strong> Graduada en Ciencias y Lenguas de la Antigüedad, coordinadora de Convivencia y Bienestar durante cuatro años en centros de alta complejidad.</p>
+                <p><strong>Belén García-Izquierdo:</strong> Arquitecta de formación reconvertida a la evaluación de proyectos educativos desde una perspectiva basada en evidencia.</p>
+                <p><strong>Julia Cuevas:</strong> Licenciada en Derecho y Empresariales, tutora de FP de Grado Básico en entornos vulnerables durante cinco años. Actualmente responsable del área social de una fundación.</p>
+                <p>Las tres fundaron <strong>Prodocentia</strong>, una asociación que lleva 4 años acompañando a comunidades educativas en entornos vulnerabilizados.</p>
               </div>
             </div>
           </div>
         </div>
       </div>
 
+      <!-- CURSO 5 -->
       <div class="curso-card reveal">
         <div class="curso-card-header">
-          <h3>Facilitacion de espacios de aprendizaje</h3>
-          <div class="etapa-tag">Formadores - Universidad - Cualquier etapa</div>
+          <h3>Facilitación de espacios de aprendizaje</h3>
+          <div class="etapa-tag">Formadores · Universidad · Cualquier etapa</div>
         </div>
         <div class="curso-card-body">
-          <p>Principios pedagogicos basicos para planificar y facilitar espacios de aprendizaje efectivos, con foco en decisiones intencionales para que el aprendizaje sea realmente efectivo.</p>
+          <p>Para cualquier persona que facilite formación y quiera hacerlo mejor. Un curso que te hace pensar cómo aprendemos de verdad y cómo diseñar espacios donde eso ocurra.</p>
           <ul class="obj-list">
-            <li>Aplicar los principios fundamentales del aprendizaje</li>
-            <li>Comprender que asegura que el aprendizaje sea efectivo</li>
-            <li>Tomar decisiones intencionales al planificar y facilitar</li>
-            <li>Aplicar herramientas concretas a tus propios espacios</li>
+            <li>Principios fundamentales del aprendizaje</li>
+            <li>Decisiones intencionales al planificar y facilitar</li>
+            <li>Herramientas concretas para tus propios espacios</li>
           </ul>
           <div class="acc-wrap">
             <button class="acc-btn" onclick="toggleAcc(this)">
-              <div class="acc-avatar">MC</div>
-              <div class="acc-info"><strong>Marco Chimini</strong><span>Conoce al formador</span></div>
-              <span class="acc-arrow">&#9660;</span>
+              <div class="acc-avatar">
+                <img src="formador_marco_chimini.jpg" alt="Marco Chimini" onerror="this.style.display='none';this.parentNode.textContent='MC'">
+              </div>
+              <div class="acc-info"><strong>Marco Chimini</strong><span>Conoce al formador ▾</span></div>
+              <span class="acc-arrow">▼</span>
             </button>
             <div class="acc-body">
               <div class="acc-body-inner">
-                <div class="formador-foto-placeholder">MC</div>
-                <span class="formador-nombre">Marco Chimini</span>
-                <p>Graduado en Filosofia, Economia y Politica. Ha sido docente de FP y de filosofia y tambien formador de docentes. Actualmente trabaja como consultor educativo en un proyecto de musica para el cambio social y es parte del equipo impulsor del Profest.</p>
+                <div class="formador-header">
+                  <img src="formador_marco_chimini.jpg" alt="Marco Chimini" class="formador-foto-grande" onerror="this.outerHTML='<div class=\'formador-foto-placeholder\'>MC</div>'">
+                  <div>
+                    <span class="formador-nombre">Marco Chimini</span>
+                    <span class="formador-cargo">Consultor educativo · Equipo impulsor de Profest</span>
+                  </div>
+                </div>
+                <p>Graduado en Filosofía, Economía y Política. Ha sido docente de FP y de filosofía, y formador de docentes. Actualmente trabaja como consultor educativo en un proyecto de música para el cambio social y es parte del equipo impulsor del Profest.</p>
               </div>
             </div>
           </div>
         </div>
       </div>
 
+      <!-- CURSO 6 -->
       <div class="curso-card reveal">
         <div class="curso-card-header">
-          <h3>Acompanamiento a lideres educativos</h3>
-          <div class="etapa-tag">Coordinadores - Jefaturas - Direcciones de centro</div>
+          <h3>Acompañamiento a líderes educativos</h3>
+          <div class="etapa-tag">Coordinadores · Jefaturas · Direcciones de centro</div>
         </div>
         <div class="curso-card-body">
-          <p>Reflexiona y adquiere herramientas para disenar un plan eficaz que provoque un cambio positivo a nivel centro.</p>
+          <p>Para quienes tienen algún tipo de responsabilidad de liderazgo en su centro y quieren tener herramientas reales para acompañar mejor a su equipo.</p>
           <ul class="obj-list">
-            <li>Construir una cultura solida que potencie el talento y la colaboracion del equipo</li>
-            <li>Fortalecer la cultura de colaboracion en el claustro de forma sostenible</li>
-            <li>Hacer que cada encuentro sea mas productivo, agil y motivador</li>
-            <li>Incorporar la retroalimentacion como parte de la vida diaria del centro</li>
+            <li>Construir una cultura de equipo sólida y colaborativa</li>
+            <li>Reuniones más productivas y menos agotadoras</li>
+            <li>Retroalimentación como práctica cotidiana del centro</li>
+            <li>Estructuras sostenibles de mejora continua</li>
           </ul>
           <div class="acc-wrap">
             <button class="acc-btn" onclick="toggleAcc(this)">
-              <div class="acc-avatar">AT</div>
-              <div class="acc-info"><strong>Andrea Tormo</strong><span>Conoce a la formadora</span></div>
-              <span class="acc-arrow">&#9660;</span>
+              <div class="acc-avatar">
+                <img src="formadora_andrea_tormo.jpg" alt="Andrea Tormo" onerror="this.style.display='none';this.parentNode.textContent='AT'">
+              </div>
+              <div class="acc-info"><strong>Andrea Tormo</strong><span>Conoce a la formadora ▾</span></div>
+              <span class="acc-arrow">▼</span>
             </button>
             <div class="acc-body">
               <div class="acc-body-inner">
-                <div class="formador-foto-placeholder">AT</div>
-                <span class="formador-nombre">Andrea Tormo</span>
-                <p>Arquitecta reconvertida al mundo educativo para, segun sus palabras, seguir disenando estructuras invisibles que nos ayuden a caminar hacia la equidad. Andrea es profesora, formadora de docentes y cofundadora de VIA Consultoria Educativa.</p>
+                <div class="formador-header">
+                  <img src="formadora_andrea_tormo.jpg" alt="Andrea Tormo" class="formador-foto-grande" onerror="this.outerHTML='<div class=\'formador-foto-placeholder\'>AT</div>'">
+                  <div>
+                    <span class="formador-nombre">Andrea Tormo</span>
+                    <span class="formador-cargo">Co-fundadora VIA Consultoría Educativa</span>
+                  </div>
+                </div>
+                <p>Arquitecta reconvertida al mundo educativo para, según sus palabras, "seguir diseñando, esta vez, estructuras invisibles que nos ayuden a caminar hacia la equidad". Es profesora, formadora de docentes y cofundadora de VIA Consultoría Educativa.</p>
               </div>
             </div>
           </div>
         </div>
       </div>
 
+      <!-- CURSO 7 -->
       <div class="curso-card reveal">
         <div class="curso-card-header">
           <h3>Mindfulness en el aula</h3>
-          <div class="etapa-tag">Infantil - Primaria - ESO</div>
+          <div class="etapa-tag">Infantil · Primaria · ESO</div>
         </div>
         <div class="curso-card-body">
-          <p>Adquiere herramientas para mejorar el bienestar de docentes y alumnado a traves de una formacion vivencial de gestion emocional, relajacion y atencion plena.</p>
+          <p>Un curso vivencial. No solo para el alumnado: también para cuidar a las personas que enseñan. Técnicas de gestión emocional, relajación y atención plena adaptadas al contexto escolar.</p>
           <ul class="obj-list">
-            <li>Herramientas para mejorar el bienestar docente</li>
-            <li>Tecnicas de gestion emocional y relajacion para el alumnado</li>
-            <li>Fomentar un clima respetuoso en el aula</li>
-            <li>Promover una cultura de paz en la comunidad educativa</li>
+            <li>Herramientas para el bienestar docente</li>
+            <li>Técnicas de gestión emocional y relajación para el alumnado</li>
+            <li>Clima respetuoso y cultura de paz en el aula</li>
           </ul>
           <div class="acc-wrap">
             <button class="acc-btn" onclick="toggleAcc(this)">
-              <div class="acc-avatar">AD</div>
-              <div class="acc-info"><strong>Alicia Duran</strong><span>Conoce a la formadora</span></div>
-              <span class="acc-arrow">&#9660;</span>
+              <div class="acc-avatar">
+                <img src="formadora_alicia_duran.jpg" alt="Alicia Durán" onerror="this.style.display='none';this.parentNode.textContent='AD'">
+              </div>
+              <div class="acc-info"><strong>Alicia Durán</strong><span>Conoce a la formadora ▾</span></div>
+              <span class="acc-arrow">▼</span>
             </button>
             <div class="acc-body">
               <div class="acc-body-inner">
-                <div class="formador-foto-placeholder">AD</div>
-                <span class="formador-nombre">Alicia Duran</span>
-                <p>Graduada en Magisterio con la especialidad de la ensenanza de frances como lengua extranjera, es maestra en la escuela publica andaluza. Se ha formado como docente de yoga infantil y es fundadora de la asociacion de Mindfulness en la Escuela, dedicada a la creacion y difusion de herramientas para el profesorado y para el alumnado sobre gestion emocional, relajacion y atencion plena.</p>
+                <div class="formador-header">
+                  <img src="formadora_alicia_duran.jpg" alt="Alicia Durán" class="formador-foto-grande" onerror="this.outerHTML='<div class=\'formador-foto-placeholder\'>AD</div>'">
+                  <div>
+                    <span class="formador-nombre">Alicia Durán</span>
+                    <span class="formador-cargo">Maestra · Fundadora de Mindfulness en la Escuela</span>
+                  </div>
+                </div>
+                <p>Graduada en Magisterio, es maestra en la escuela pública andaluza. Se ha formado como docente de yoga infantil y fundó la asociación de Mindfulness en la Escuela, dedicada a crear y difundir herramientas sobre gestión emocional, relajación y atención plena para el profesorado y el alumnado.</p>
               </div>
             </div>
           </div>
@@ -591,12 +657,11 @@ footer strong { color: var(--rosa); font-family: 'Baloo 2', cursive; }
     </div>
   </div>
 </section>
-
 <!-- TALLERES Y PILDORAS -->
 <section id="talleres">
   <div class="section-inner">
     <div class="section-tag reveal">Por las tardes</div>
-    <div class="section-title reveal">Talleres y pildoras</div>
+    <div class="section-title reveal">Talleres y píldoras</div>
     <div class="talleres-flex">
       <div class="taller-box reveal">
         <h3>Talleres</h3>
@@ -620,19 +685,19 @@ footer strong { color: var(--rosa); font-family: 'Baloo 2', cursive; }
     <div class="aloj-grid">
       <div class="aloj-card reveal">
         <h3>⛺ Zona de acampada libre</h3>
-        <p>Para tiendas de campana. Con acceso a banos, duchas y fuentes de agua. Ideal para quienes quieren vivir el encuentro al maximo.</p>
+        <p>Para tiendas de campaña. Con acceso a baños, duchas y fuentes de agua. Ideal para quienes quieren vivir el encuentro al máximo.</p>
       </div>
       <div class="aloj-card reveal">
         <h3>🚐 Acampada en vehiculo</h3>
-        <p>Zona especifica para acampada en vehiculo propio, con los mismos servicios. Ambas zonas tienen oferta de bares cercanos.</p>
+        <p>Zona específica para acampada en vehículo propio, con los mismos servicios. Ambas zonas tienen oferta de bares cercanos.</p>
       </div>
       <div class="aloj-card reveal">
         <h3>🏡 Alojamiento alternativo</h3>
-        <p>Si la acampada no es lo tuyo, hay apartamentos, casas rurales y posadas en el pueblo y localidades cercanas. Recomendamos reservar con antelacion. Si necesitas ayuda para encontrar alojamiento alternativo, escribenos y te orientamos: <strong style="color:var(--rosa)"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="95e5e7faf3f0e6e1d5f4e6faf6fcf4f6fcfafbe5e0e5fce1e7f0bbfae7f2">somosasociacionpupitre@gmail.com</a></strong></p>
+        <p>Si la acampada no es lo tuyo, hay apartamentos, casas rurales y posadas en el pueblo y localidades cercanas. Recomendamos reservar con antelación. Si necesitas ayuda para encontrar alojamiento alternativo, escribenos y te orientamos: <strong style="color:var(--rosa)"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="95e5e7faf3f0e6e1d5f4e6faf6fcf4f6fcfafbe5e0e5fce1e7f0bbfae7f2"><span class="__cf_email__" data-cfemail="097a6664667a687a666a60686a606667797c79607d7b6c496e64686065276a6664">[email&#160;protected]</span></a></strong></p>
       </div>
       <div class="aloj-card reveal">
         <h3>🍽️ Las comidas</h3>
-        <p>Los desayunos, comidas y cenas se realizaran en un comedor compartido, donde todos los participantes se reuniran para comer juntos. Las comidas son parte de la experiencia: un espacio para conversar, conocerse y seguir tejiendo comunidad alrededor de la mesa.</p>
+        <p>Los desayunos, comidas y cenas se realizarán en un comedor compartido, donde todos los participantes se reunirán para comer juntos. Las comidas son parte de la experiencia: un espacio para conversar, conocerse y seguir tejiendo comunidad alrededor de la mesa.</p>
       </div>
     </div>
   </div>
@@ -643,7 +708,7 @@ footer strong { color: var(--rosa); font-family: 'Baloo 2', cursive; }
   <div class="section-inner">
     <div class="section-tag reveal">Tarifas</div>
     <div class="section-title reveal" style="color:var(--verde-dark)">Un precio para<br>cada situacion.</div>
-    <p class="tarifas-intro reveal">Somos conscientes de que no todo el mundo llega en las mismas condiciones economicas. Por eso proponemos tarifas a medida, con la confianza de que cada persona elija la suya de forma consciente y corresponsable. Queremos que el encuentro sea sostenible para quienes lo hacen posible y accesible para quien quiera venir.</p>
+    <p class="tarifas-intro reveal">Somos conscientes de que no todo el mundo llega en las mismas condiciones económicas. Por eso proponemos tarifas a medida, con la confianza de que cada persona elija la suya de forma consciente y corresponsable. Queremos que el encuentro sea sostenible para quienes lo hacen posible y accesible para quien quiera venir.</p>
     <div class="tarifas-grid">
       <div class="tarifa-card media reveal">
         <div class="tarifa-badge">La más habitual</div>
@@ -655,12 +720,12 @@ footer strong { color: var(--rosa); font-family: 'Baloo 2', cursive; }
         <div class="tarifa-badge" style="background:var(--verde);color:white;">Plazas limitadas</div>
         <div class="tarifa-nombre" style="color:var(--verde-dark)">Tarifa<br>precaria</div>
         <div class="tarifa-precio">249€</div>
-        <div class="tarifa-desc" style="color:var(--gris)">Para quienes no podrian permitirse pagar la tarifa entera pero tienen muchas ganas de venir.</div>
+        <div class="tarifa-desc" style="color:var(--gris)">Para quienes no podrían permitirse pagar la tarifa entera pero tienen muchas ganas de venir.</div>
       </div>
       <div class="tarifa-card desahogada reveal">
         <div class="tarifa-nombre" style="color:var(--verde-dark)">Tarifa desahogada</div>
         <div class="tarifa-precio">330€</div>
-        <div class="tarifa-desc" style="color:var(--verde-dark)">Para quienes esten en posicion y quieran contribuir con un extra para que este proyecto salga adelante.</div>
+        <div class="tarifa-desc" style="color:var(--verde-dark)">Para quienes estén en posición y quieran contribuir con un extra para que este proyecto salga adelante.</div>
       </div>
       <div class="tarifa-card local reveal">
         <div class="tarifa-badge">Plazas limitadas</div>
@@ -671,39 +736,39 @@ footer strong { color: var(--rosa); font-family: 'Baloo 2', cursive; }
     </div>
     <div class="tarifas-incluye reveal">
       <h4>Todas las tarifas incluyen:</h4>
-      <p>Curso intensivo en grupo reducido - Zona de acampada - Desayuno, comida y cena - Zona de parking - Mananas activas - Talleres y pildoras - Actividades de ocio</p>
+      <p>Curso intensivo en grupo reducido - Zona de acampada - Desayuno, comida y cena - Zona de parking - Mañanas activas - Talleres y píldoras - Actividades de ocio</p>
     </div>
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeuhp2MdthsTNxEZMAJ-akljXur0xn9qDnqH8Z8Jkkp1i8pVQ/viewform?usp=preview" target="_blank" class="hero-btn">Quiero reservar mi plaza →</a>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeuhp2MdthsTNxEZMAJ-akljXur0xn9qDnqH8Z8Jkkp1i8pVQ/viewform?usp=preview" target="_blank" class="hero-btn" style="display:block;text-align:center;margin-top:2.5rem;">Quiero reservar mi plaza →</a>
   </div>
 </section>
 
 <!-- EQUIPO -->
 <section id="equipo">
   <div class="section-inner">
-    <div class="section-tag reveal">Quienes somos</div>
+    <div class="section-tag reveal">Quiénes somos</div>
     <div class="section-title reveal">El equipo<br>impulsor.</div>
-    <p style="color:rgba(255,255,255,.8);margin-bottom:1rem;font-size:1rem;line-height:1.7;" class="reveal">Detras del Profest esta la <strong style="color:var(--rosa)">Asociacion Pupitre</strong>.</p>
-    <p style="color:rgba(255,255,255,.8);margin-bottom:2rem;font-size:1rem;line-height:1.7;" class="reveal">La <strong style="color:var(--rosa)">Asociacion Pupitre</strong> promueve la mejora pedagogica en contextos rurales y socialmente vulnerabilizados mediante formaciones, acompanamiento, material audiovisual y espacios de encuentro.</p>
+    <p style="color:rgba(255,255,255,.8);margin-bottom:1rem;font-size:1rem;line-height:1.7;" class="reveal">Detrás del Profest está la <strong style="color:var(--rosa)">Asociacion Pupitre</strong>.</p>
+    <p style="color:rgba(255,255,255,.8);margin-bottom:2rem;font-size:1rem;line-height:1.7;" class="reveal">La <strong style="color:var(--rosa)">Asociación Pupitre</strong> promueve la mejora pedagógica en contextos rurales y socialmente vulnerabilizados mediante formaciones, acompañamiento, material audiovisual y espacios de encuentro.</p>
     <div class="equipo-grid">
       <div class="equipo-card reveal">
         <div class="equipo-avatar">MR</div>
         <h3>Maria Roman</h3>
-        <p>Maestra con mas de 10 anos de experiencia, forma y acompana a docentes con foco en la equidad educativa.</p>
+        <p>Maestra con más de 10 años de experiencia, forma y acompaña a docentes con foco en la equidad educativa.</p>
       </div>
       <div class="equipo-card reveal">
         <div class="equipo-avatar">CA</div>
         <h3>Carlos Aceituno</h3>
-        <p>Ingeniero reconvertido a profesor de secundaria y formador docente. Doctorando en Educacion, Ciencia y Tecnologia en la UPM.</p>
+        <p>Ingeniero reconvertido a profesor de secundaria y formador docente. Doctorando en Educación, Ciencia y Tecnología en la UPM.</p>
       </div>
       <div class="equipo-card reveal">
         <div class="equipo-avatar">DP</div>
         <h3>David Perezagua</h3>
-        <p>Fisico y divulgador cientifico. Docente en la escuela publica y en el grado de Magisterio de la UAM.</p>
+        <p>Físico y divulgador científico. Docente en la escuela pública y en el grado de Magisterio de la UAM.</p>
       </div>
       <div class="equipo-card reveal">
         <div class="equipo-avatar">MC</div>
         <h3>Marco Chimini</h3>
-        <p>Formador de docentes y consultor educativo en proyectos de musica para el cambio social.</p>
+        <p>Formador de docentes y consultor educativo en proyectos de música para el cambio social.</p>
       </div>
     </div>
   </div>
@@ -716,11 +781,11 @@ footer strong { color: var(--rosa); font-family: 'Baloo 2', cursive; }
     <div class="section-title reveal">Desde lo rural,<br>para la educacion.</div>
     <div class="desde-flex">
       <div class="desde-text reveal">
-        <p>Las zonas rurales en Espana han sufrido un proceso de despoblacion, envejecimiento y perdida de servicios basicos. PROFEST surge para contribuir a la descentralizacion de servicios, asegurando el acceso a formaciones de calidad desde los margenes.</p>
-        <p>Con un claro objetivo de <strong>revalorizar y cambiar la mirada</strong>: poniendo en valor y disfrutando de los multiples beneficios que ofrecen los pueblos.</p>
+        <p>Las zonas rurales en España han sufrido un proceso de despoblación, envejecimiento y pérdida de servicios básicos. PROFEST surge para contribuir a la descentralización de servicios, asegurando el acceso a formaciones de calidad desde los márgenes.</p>
+        <p>Con un claro objetivo de <strong>revalorizar y cambiar la mirada</strong>: poniendo en valor y disfrutando de los múltiples beneficios que ofrecen los pueblos.</p>
       </div>
-      <div class="para-quien-item reveal">
-        Desde lo rural promovemos el desarrollo profesional del profesorado, la innovacion local y la colaboracion entre actores del territorio, con el proposito de dignificar la vida en los pueblos y demostrar que son espacios de futuro, talento y bienestar.
+      <div class="desde-quote reveal">
+        Desde lo rural promovemos el desarrollo profesional del profesorado, la innovación local y la colaboración entre actores del territorio, con el propósito de dignificar la vida en los pueblos y demostrar que son espacios de futuro, talento y bienestar.
       </div>
     </div>
   </div>
@@ -730,7 +795,7 @@ footer strong { color: var(--rosa); font-family: 'Baloo 2', cursive; }
 <section id="faq">
   <div class="section-inner">
     <div class="section-tag reveal">Preguntas frecuentes</div>
-    <div class="section-title reveal" style="color:var(--verde-dark)">Tienes dudas?<br>Las resolvemos.</div>
+    <div class="section-title reveal" style="color:var(--verde-dark)">¿Tienes dudas?<br>Normal.</div>
     <div class="faq-list">
 
       <div class="faq-item reveal">
@@ -739,7 +804,7 @@ footer strong { color: var(--rosa); font-family: 'Baloo 2', cursive; }
           <span class="faq-icon">+</span>
         </button>
         <div class="faq-answer">
-          <div class="faq-answer-inner">No. PROFEST esta pensado tanto para docentes con trayectoria como para quienes estan empezando. Si tienes inquietud por mejorar tu practica y formar parte de una comunidad profesional, este encuentro es para ti.</div>
+          <div class="faq-answer-inner">No. PROFEST está pensado tanto para docentes con trayectoria como para quienes están empezando. Si tienes inquietud por mejorar tu práctica y formar parte de una comunidad profesional, este encuentro es para ti.</div>
         </div>
       </div>
 
@@ -749,17 +814,17 @@ footer strong { color: var(--rosa); font-family: 'Baloo 2', cursive; }
           <span class="faq-icon">+</span>
         </button>
         <div class="faq-answer">
-          <div class="faq-answer-inner">Si. Y de hecho, muchas personas vienen sin conocer a nadie. La convivencia, los grupos reducidos y las actividades comunitarias estan disenadas precisamente para facilitar vinculos reales.</div>
+          <div class="faq-answer-inner">Sí. Y de hecho, muchas personas vienen sin conocer a nadie. La convivencia, los grupos reducidos y las actividades comunitarias están diseñadas precisamente para que eso no sea un problema, sino todo lo contrario.</div>
         </div>
       </div>
 
       <div class="faq-item reveal">
         <button class="faq-btn" onclick="toggleFaq(this)">
-          <span class="faq-question">¿Que pasa si no quiero acampar?</span>
+          <span class="faq-question">¿Qué pasa si no quiero acampar?</span>
           <span class="faq-icon">+</span>
         </button>
         <div class="faq-answer">
-          <div class="faq-answer-inner">La acampada forma parte de la experiencia comunitaria, pero no es obligatoria. Puedes alojarte en apartamentos, casas rurales o posadas en el pueblo o alrededores. Recomendamos reservar con antelacion. Escribenos un correo si necesitas que te echemos una mano con esto.</div>
+          <div class="faq-answer-inner">La acampada forma parte de la experiencia comunitaria, pero no es obligatoria. Puedes alojarte en apartamentos, casas rurales o posadas en el pueblo o alrededores. Recomendamos reservar con antelación. Escríbenos si necesitas ayuda con esto.</div>
         </div>
       </div>
 
@@ -769,36 +834,36 @@ footer strong { color: var(--rosa); font-family: 'Baloo 2', cursive; }
           <span class="faq-icon">+</span>
         </button>
         <div class="faq-answer">
-          <div class="faq-answer-inner">No. Queremos equilibrio entre aprendizaje y descanso. Las mananas intensivas si forman parte del curso elegido. Las tardes y actividades comunitarias son opcionales.</div>
+          <div class="faq-answer-inner">No. Queremos equilibrio entre aprendizaje y descanso. Las mañanas intensivas sí forman parte del curso que hayas elegido. Las tardes y actividades comunitarias son opcionales: puedes ir a lo que quieras o simplemente descansar.</div>
         </div>
       </div>
 
       <div class="faq-item reveal">
         <button class="faq-btn" onclick="toggleFaq(this)">
-          <span class="faq-question">¿Recibire algun certificado?</span>
+          <span class="faq-question">¿Recibiré algún certificado?</span>
           <span class="faq-icon">+</span>
         </button>
         <div class="faq-answer">
-          <div class="faq-answer-inner">Si. Se entregara certificado de participacion correspondiente a las horas de formacion del curso intensivo.</div>
+          <div class="faq-answer-inner">Sí. Se entregará certificado de participación correspondiente a las horas de formación del curso intensivo.</div>
         </div>
       </div>
 
       <div class="faq-item reveal">
         <button class="faq-btn" onclick="toggleFaq(this)">
-          <span class="faq-question">¿Que diferencia a PROFEST de otros congresos educativos?</span>
+          <span class="faq-question">¿Qué diferencia a PROFEST de otros congresos educativos?</span>
           <span class="faq-icon">+</span>
         </button>
         <div class="faq-answer">
           <div class="faq-answer-inner">
-            PROFEST combina:
+            PROFEST combina cosas que normalmente no van juntas:
             <ul>
-              <li>Formacion rigurosa en grupo reducido</li>
+              <li>Formación rigurosa en grupo reducido</li>
               <li>Convivencia real</li>
-              <li>Espacios de bienestar</li>
+              <li>Espacios de bienestar y descanso</li>
               <li>Entorno rural elegido conscientemente</li>
-              <li>Construccion de red profesional que continua mas alla del evento</li>
+              <li>Red profesional que continúa más allá del evento</li>
             </ul>
-            No vienes a escuchar ponencias. Vienes a formar parte de una comunidad de aprendizaje activo.
+            No vienes a escuchar ponencias. Vienes a formar parte de algo.
           </div>
         </div>
       </div>
@@ -809,25 +874,25 @@ footer strong { color: var(--rosa); font-family: 'Baloo 2', cursive; }
           <span class="faq-icon">+</span>
         </button>
         <div class="faq-answer">
-          <div class="faq-answer-inner">Si. Trabajamos con grupos reducidos para cuidar la calidad de la formacion y la experiencia comunitaria. Cuando se completen las plazas de cada curso, se cerrara la inscripcion.</div>
+          <div class="faq-answer-inner">Sí. Trabajamos con grupos reducidos para cuidar la calidad de la formación y la experiencia comunitaria. Cuando se completen las plazas de cada curso, se cerrará la inscripción.</div>
         </div>
       </div>
 
       <div class="faq-item reveal">
         <button class="faq-btn" onclick="toggleFaq(this)">
-          <span class="faq-question">¿Puedo elegir tarifa segun mi situacion economica?</span>
+          <span class="faq-question">¿Puedo elegir tarifa según mi situación económica?</span>
           <span class="faq-icon">+</span>
         </button>
         <div class="faq-answer">
-          <div class="faq-answer-inner">Si. Confiamos en una eleccion consciente y corresponsable. Queremos que el encuentro sea accesible y, al mismo tiempo, sostenible para quienes lo hacen posible.</div>
+          <div class="faq-answer-inner">Sí. Confiamos en una elección consciente y corresponsable. Queremos que el encuentro sea accesible y, al mismo tiempo, sostenible para quienes lo hacen posible.</div>
         </div>
       </div>
 
     </div>
 
     <div class="faq-cta-box reveal">
-      <h3>Te unes a la comunidad?</h3>
-      <p>Empieza el curso con red, claridad y proposito.</p>
+      <h3>¿Te unes a la comunidad?</h3>
+      <p>Empieza el curso con red, claridad y propósito.</p>
       <a href="https://docs.google.com/forms/d/e/1FAIpQLSeuhp2MdthsTNxEZMAJ-akljXur0xn9qDnqH8Z8Jkkp1i8pVQ/viewform?usp=preview" target="_blank" class="faq-cta-btn">Quiero reservar mi plaza en PROFEST 2026</a>
     </div>
 
@@ -838,11 +903,11 @@ footer strong { color: var(--rosa); font-family: 'Baloo 2', cursive; }
 <section id="contacto">
   <div class="section-inner">
     <div class="section-tag reveal">Contacto</div>
-    <div class="section-title reveal">Hablamos?</div>
+    <div class="section-title reveal">¿Hablamos?</div>
     <div class="contacto-grid">
       <a href="/cdn-cgi/l/email-protection#72011d1f1d0113011d111b13111b1d1c0207021b06001732151f131b1e5c111d1f" class="contacto-item reveal">
         <div class="ci-icon">&#9993;</div>
-        <div class="ci-label">Correo electronico</div>
+        <div class="ci-label">Correo electrónico</div>
         <div class="ci-value"><span class="__cf_email__" data-cfemail="c1b2aeacaeb2a0b2aea2a8a0a2a8aeafb1b4b1a8b5b3a481a6aca0a8adefa2aeac">[email&#160;protected]</span></div>
       </a>
       <a href="https://instagram.com/profest_oficial" target="_blank" class="contacto-item reveal">
@@ -852,11 +917,11 @@ footer strong { color: var(--rosa); font-family: 'Baloo 2', cursive; }
       </a>
       <a href="tel:608525279" class="contacto-item reveal">
         <div class="ci-icon">&#128222;</div>
-        <div class="ci-label">Telefono</div>
+        <div class="ci-label">Teléfono</div>
         <div class="ci-value">608 525 279</div>
       </a>
     </div>
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeuhp2MdthsTNxEZMAJ-akljXur0xn9qDnqH8Z8Jkkp1i8pVQ/viewform?usp=preview" target="_blank" class="cta-final reveal">Quiero inscribirme en PROFEST 2026!</a>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSeuhp2MdthsTNxEZMAJ-akljXur0xn9qDnqH8Z8Jkkp1i8pVQ/viewform?usp=preview" target="_blank" class="cta-final reveal">¡Quiero inscribirme en PROFEST 2026!</a>
   </div>
 </section>
 
@@ -866,7 +931,7 @@ footer strong { color: var(--rosa); font-family: 'Baloo 2', cursive; }
   <span style="font-size:.75rem;"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="295a4644465a485a464a40484a404647595c59405d5b4c694e44484045074a4644">[email&#160;protected]</a> - 608 525 279 - @profest_oficial</span>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   function handleLogoUpload(event) {
     var file = event.target.files[0];
     if (!file) return;
@@ -901,7 +966,17 @@ footer strong { color: var(--rosa); font-family: 'Baloo 2', cursive; }
   }
 
   // Reveal on scroll
-  document.body.classList.add('js-ready');
-  var reveals = document.querySelectorAll('.reveal');
+  document.documentElement.classList.add('js-ready');
+  var revealEls = document.querySelectorAll('.reveal');
   var observer = new IntersectionObserver(function(entries) {
-    ent
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  revealEls.forEach(function(el) { observer.observe(el); });
+</script>
+</body>
+</html>
