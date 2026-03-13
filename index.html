@@ -138,6 +138,10 @@ section { padding: 5rem 1.5rem; }
 .acc-body-inner img.formador-foto { width: 70px; height: 70px; border-radius: 50%; object-fit: cover; margin-bottom: .6rem; border: 3px solid var(--verde); display: block; }
 .acc-body-inner .formador-nombre { font-family: 'Baloo 2', cursive; font-weight: 800; color: var(--verde-dark); font-size: .95rem; display: block; margin-bottom: .4rem; }
 .acc-body-inner p { font-family: 'Nunito', sans-serif; font-size: .82rem; color: var(--gris); line-height: 1.6; margin-top: .3rem; }
+.formador-header { display: flex; align-items: center; gap: .8rem; margin-bottom: .6rem; }
+.formador-header .formador-foto-placeholder { width: 70px; height: 70px; min-width: 70px; border-radius: 50%; background: var(--verde); color: white; display: flex; align-items: center; justify-content: center; font-family: 'Baloo 2', cursive; font-size: 1.1rem; font-weight: 800; flex-shrink: 0; }
+.formador-foto-grande { width: 70px; height: 70px; min-width: 70px; border-radius: 50%; object-fit: cover; flex-shrink: 0; border: 3px solid var(--verde); }
+.formador-cargo { font-family: 'Nunito', sans-serif; font-size: .76rem; color: var(--gris); display: block; }
 
 /* TALLERES */
 #talleres { background: var(--verde-bg); }
@@ -531,8 +535,13 @@ footer strong { color: var(--rosa); font-family: 'Baloo 2', cursive; }
             </button>
             <div class="acc-body">
               <div class="acc-body-inner">
-                <span class="formador-nombre">Eva Mollinedo, Belén García-Izquierdo y Julia Cuevas</span>
-                <span class="formador-cargo" style="display:block;margin-bottom:.6rem;">Fundadoras de Prodocentia</span>
+                <div class="formador-header">
+                  <div class="formador-foto-placeholder">PR</div>
+                  <div>
+                    <span class="formador-nombre">Eva Mollinedo, Belén García-Izquierdo y Julia Cuevas</span>
+                    <span class="formador-cargo">Fundadoras de Prodocentia</span>
+                  </div>
+                </div>
                 <p><strong>Eva Mollinedo:</strong> Graduada en Ciencias y Lenguas de la Antigüedad, coordinadora de Convivencia y Bienestar durante cuatro años en centros de alta complejidad.</p>
                 <p><strong>Belén García-Izquierdo:</strong> Arquitecta de formación reconvertida a la evaluación de proyectos educativos desde una perspectiva basada en evidencia.</p>
                 <p><strong>Julia Cuevas:</strong> Licenciada en Derecho y Empresariales, tutora de FP de Grado Básico en entornos vulnerables durante cinco años. Actualmente responsable del área social de una fundación.</p>
