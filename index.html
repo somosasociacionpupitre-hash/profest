@@ -289,7 +289,16 @@ footer strong { color: var(--rosa); font-family: 'Baloo 2', cursive; }
     <div class="hero-meta-item">&#127891; <span>7 cursos a elegir</span></div>
     <div class="hero-meta-item">&#128182; <span>Tarifas a medida</span></div>
   </div>
-  <a href="https://forms.gle/GzAzezB2j88HUoYJ8" target="_blank" class="hero-btn">Quiero inscribirme →</a>
+  <a href="https://forms.gle/GzAzezB2j88HUoYJ8"
+   target="_blank"
+   class="hero-btn"
+   onclick="gtag('event', 'click_inscripcion', {
+     event_category: 'boton',
+     event_label: 'hero_principal',
+     transport_type: 'beacon'
+   });">
+  Quiero inscribirme →
+</a>
 </section>
 
 <!-- QUE ES -->
