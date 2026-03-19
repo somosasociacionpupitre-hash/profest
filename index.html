@@ -270,7 +270,17 @@ footer strong { color: var(--rosa); font-family: 'Baloo 2', cursive; }
     <li><a href="#cursos">Cursos</a></li>
     <li><a href="#tarifas">Tarifas</a></li>
     <li><a href="#faq">FAQ</a></li>
-    <li><a href="https://forms.gle/GzAzezB2j88HUoYJ8" target="_blank" class="nav-cta">¡Me apunto!</a></li>
+    <li>
+  <a href="https://forms.gle/GzAzezB2j88HUoYJ8"
+     target="_blank"
+     class="nav-cta"
+     onclick="gtag('event', 'click_inscripcion', {
+       event_label: 'navbar',
+       transport_type: 'beacon'
+     });">
+    ¡Me apunto!
+  </a>
+</li>
   </ul>
 </nav>
 
@@ -293,8 +303,7 @@ footer strong { color: var(--rosa); font-family: 'Baloo 2', cursive; }
    target="_blank"
    class="hero-btn"
    onclick="gtag('event', 'click_inscripcion', {
-     event_category: 'boton',
-     event_label: 'hero_principal',
+     event_label: 'hero',
      transport_type: 'beacon'
    });">
   Quiero inscribirme →
@@ -769,7 +778,17 @@ footer strong { color: var(--rosa); font-family: 'Baloo 2', cursive; }
       <h4>Todas las tarifas incluyen:</h4>
       <p>Curso intensivo en grupo reducido - Zona de acampada - Desayuno, comida y cena - Zona de parking - Mañanas activas - Talleres y píldoras - Actividades de ocio</p>
     </div>
-    <a href="https://forms.gle/GzAzezB2j88HUoYJ8" target="_blank" class="hero-btn" style="display:block;text-align:center;margin-top:2.5rem;">Quiero reservar mi plaza →</a>
+   <a href="https://forms.gle/GzAzezB2j88HUoYJ8"
+   target="_blank"
+   class="hero-btn"
+   style="display:block;text-align:center;margin-top:2.5rem;"
+   onclick="gtag('event', 'click_inscripcion', {
+     event_label: 'tarifas',
+     transport_type: 'beacon'
+   });">
+  Quiero reservar mi plaza →
+</a>
+</div>
   </div>
 </section>
 
@@ -932,8 +951,15 @@ footer strong { color: var(--rosa); font-family: 'Baloo 2', cursive; }
     <div class="faq-cta-box reveal">
       <h3>¿Te unes a la comunidad?</h3>
       <p>Empieza el curso con red, claridad y propósito.</p>
-      <a href="https://forms.gle/GzAzezB2j88HUoYJ8" target="_blank" class="faq-cta-btn">Quiero reservar mi plaza en PROFEST 2026</a>
-    </div>
+     <a href="https://forms.gle/GzAzezB2j88HUoYJ8"
+   target="_blank"
+   class="faq-cta-btn"
+   onclick="gtag('event', 'click_inscripcion', {
+     event_label: 'footer',
+     transport_type: 'beacon'
+   });">
+  Quiero reservar mi plaza en PROFEST 2026
+</a>
 
   </div>
 </section>
