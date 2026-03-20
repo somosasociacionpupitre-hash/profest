@@ -252,10 +252,10 @@ footer strong { color: var(--amarillo); }
 <nav>
   <div class="nav-logo">PROFEST</div>
   <ul class="nav-links">
-    <li><a href="#que-es">Qué es</a></li>
-    <li><a href="#cursos">Cursos</a></li>
-    <li><a href="#inscripcion">Inscripción</a></li>
-    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#que-es" onclick="gtag('event', 'nav_click', { event_label: 'que-es', transport_type: 'beacon' });">Qué es</a></li>
+    <li><a href="#cursos" onclick="gtag('event', 'nav_click', { event_label: 'cursos', transport_type: 'beacon' });">Cursos</a></li>
+    <li><a href="#inscripcion" onclick="gtag('event', 'nav_click', { event_label: 'inscripcion', transport_type: 'beacon' });">Inscripción</a></li>
+    <li><a href="#faq" onclick="gtag('event', 'nav_click', { event_label: 'faq', transport_type: 'beacon' });">FAQ</a></li>
     <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSeuhp2MdthsTNxEZMAJ-akljXur0xn9qDnqH8Z8Jkkp1i8pVQ/viewform?usp=preview" target="_blank" class="nav-cta">¡Me apunto!</a></li>
   </ul>
 </nav>
@@ -410,7 +410,7 @@ footer strong { color: var(--amarillo); }
             <li>Lenguaje inclusivo y entornos seguros</li>
           </ul>
           <div class="acc-wrap">
-            <button class="acc-btn" onclick="toggleAcc(this)">
+            <button class="acc-btn" data-formador="nuria_picas" onclick="toggleAcc(this)">
               <div class="acc-avatar">
                 <img src="formadora_nuria_picas.jpg" alt="Núria Picas" onerror="this.style.display='none';this.parentNode.textContent='NP'">
               </div>
@@ -448,7 +448,7 @@ footer strong { color: var(--amarillo); }
             <li>Cómo construir una cultura de desarrollo profesional en el centro</li>
           </ul>
           <div class="acc-wrap">
-            <button class="acc-btn" onclick="toggleAcc(this)">
+            <button class="acc-btn" data-formador="vicky_valls" onclick="toggleAcc(this)">
               <div class="acc-avatar">
                 <img src="formadora_vicky_valls.jpg" alt="Vicky Valls" onerror="this.style.display='none';this.parentNode.textContent='VV'">
               </div>
@@ -485,7 +485,7 @@ footer strong { color: var(--amarillo); }
             <li>Horizontes deseables construidos colectivamente</li>
           </ul>
           <div class="acc-wrap">
-            <button class="acc-btn" onclick="toggleAcc(this)">
+            <button class="acc-btn" data-formador="alvaro_monso" onclick="toggleAcc(this)">
               <div class="acc-avatar">
                 <img src="formador_alvaro_monso.jpg" alt="Álvaro Monsó" onerror="this.style.display='none';this.parentNode.textContent='ÁM'">
               </div>
@@ -523,7 +523,7 @@ footer strong { color: var(--amarillo); }
             <li>Sanciones y relación centro-familias</li>
           </ul>
           <div class="acc-wrap">
-            <button class="acc-btn" onclick="toggleAcc(this)">
+            <button class="acc-btn" data-formador="prodocentia" onclick="toggleAcc(this)">
               <div class="acc-avatar">
                 <img src="formadoras_prodocentia.jpg" alt="Prodocentia" onerror="this.style.display='none';this.parentNode.textContent='PR'">
               </div>
@@ -558,7 +558,7 @@ footer strong { color: var(--amarillo); }
             <li>Herramientas concretas para tus propios espacios</li>
           </ul>
           <div class="acc-wrap">
-            <button class="acc-btn" onclick="toggleAcc(this)">
+            <button class="acc-btn" data-formador="marco_chimini" onclick="toggleAcc(this)">
               <div class="acc-avatar">
                 <img src="formador_marco_chimini.jpg" alt="Marco Chimini" onerror="this.style.display='none';this.parentNode.textContent='MC'">
               </div>
@@ -596,7 +596,7 @@ footer strong { color: var(--amarillo); }
             <li>Estructuras sostenibles de mejora continua</li>
           </ul>
           <div class="acc-wrap">
-            <button class="acc-btn" onclick="toggleAcc(this)">
+            <button class="acc-btn" data-formador="andrea_tormo" onclick="toggleAcc(this)">
               <div class="acc-avatar">
                 <img src="formadora_andrea_tormo.jpg" alt="Andrea Tormo" onerror="this.style.display='none';this.parentNode.textContent='AT'">
               </div>
@@ -633,7 +633,7 @@ footer strong { color: var(--amarillo); }
             <li>Clima respetuoso y cultura de paz en el aula</li>
           </ul>
           <div class="acc-wrap">
-            <button class="acc-btn" onclick="toggleAcc(this)">
+            <button class="acc-btn" data-formador="alicia_duran" onclick="toggleAcc(this)">
               <div class="acc-avatar">
                 <img src="formadora_alicia_duran.jpg" alt="Alicia Durán" onerror="this.style.display='none';this.parentNode.textContent='AD'">
               </div>
@@ -809,7 +809,7 @@ footer strong { color: var(--amarillo); }
     <div class="faq-list">
 
       <div class="faq-item reveal">
-        <button class="faq-btn" onclick="toggleFaq(this)">
+        <button class="faq-btn" data-faq="necesito_mucha_experiencia" onclick="toggleFaq(this)">
           <span class="faq-question">¿Necesito mucha experiencia para asistir?</span>
           <span class="faq-icon">+</span>
         </button>
@@ -819,7 +819,7 @@ footer strong { color: var(--amarillo); }
       </div>
 
       <div class="faq-item reveal">
-        <button class="faq-btn" onclick="toggleFaq(this)">
+        <button class="faq-btn" data-faq="puedo_ir_solo" onclick="toggleFaq(this)">
           <span class="faq-question">¿Puedo ir sola o solo?</span>
           <span class="faq-icon">+</span>
         </button>
@@ -829,7 +829,7 @@ footer strong { color: var(--amarillo); }
       </div>
 
       <div class="faq-item reveal">
-        <button class="faq-btn" onclick="toggleFaq(this)">
+        <button class="faq-btn" data-faq="no_quiero_acampar" onclick="toggleFaq(this)">
           <span class="faq-question">¿Qué pasa si no quiero acampar?</span>
           <span class="faq-icon">+</span>
         </button>
@@ -839,7 +839,7 @@ footer strong { color: var(--amarillo); }
       </div>
 
       <div class="faq-item reveal">
-        <button class="faq-btn" onclick="toggleFaq(this)">
+        <button class="faq-btn" data-faq="talleres_obligatorios" onclick="toggleFaq(this)">
           <span class="faq-question">¿Los talleres y actividades son obligatorios?</span>
           <span class="faq-icon">+</span>
         </button>
@@ -849,7 +849,7 @@ footer strong { color: var(--amarillo); }
       </div>
 
       <div class="faq-item reveal">
-        <button class="faq-btn" onclick="toggleFaq(this)">
+        <button class="faq-btn" data-faq="recibire_certificado" onclick="toggleFaq(this)">
           <span class="faq-question">¿Recibiré algún certificado?</span>
           <span class="faq-icon">+</span>
         </button>
@@ -859,7 +859,7 @@ footer strong { color: var(--amarillo); }
       </div>
 
       <div class="faq-item reveal">
-        <button class="faq-btn" onclick="toggleFaq(this)">
+        <button class="faq-btn" data-faq="diferencia_profest" onclick="toggleFaq(this)">
           <span class="faq-question">¿Qué diferencia a PROFEST de otros congresos educativos?</span>
           <span class="faq-icon">+</span>
         </button>
@@ -879,7 +879,7 @@ footer strong { color: var(--amarillo); }
       </div>
 
       <div class="faq-item reveal">
-        <button class="faq-btn" onclick="toggleFaq(this)">
+        <button class="faq-btn" data-faq="plazas_limitadas" onclick="toggleFaq(this)">
           <span class="faq-question">¿Las plazas son limitadas?</span>
           <span class="faq-icon">+</span>
         </button>
@@ -889,7 +889,7 @@ footer strong { color: var(--amarillo); }
       </div>
 
       <div class="faq-item reveal">
-        <button class="faq-btn" onclick="toggleFaq(this)">
+        <button class="faq-btn" data-faq="elegir_tarifa" onclick="toggleFaq(this)">
           <span class="faq-question">¿Puedo elegir tarifa según mi situación económica?</span>
           <span class="faq-icon">+</span>
         </button>
@@ -947,6 +947,12 @@ footer strong { color: var(--amarillo); }
     var isOpen = body.classList.contains('open');
     body.classList.toggle('open', !isOpen);
     arrow.classList.toggle('open', !isOpen);
+    if (!isOpen && typeof gtag === 'function') {
+      gtag('event', 'open_formador', {
+        event_label: btn.getAttribute('data-formador'),
+        transport_type: 'beacon'
+      });
+    }
   }
 
   function toggleFaq(btn) {
@@ -956,6 +962,12 @@ footer strong { color: var(--amarillo); }
     answer.classList.toggle('open', !isOpen);
     icon.classList.toggle('open', !isOpen);
     icon.textContent = isOpen ? '+' : 'x';
+    if (!isOpen && typeof gtag === 'function') {
+      gtag('event', 'open_faq', {
+        event_label: btn.getAttribute('data-faq'),
+        transport_type: 'beacon'
+      });
+    }
   }
 
   var reveals = document.querySelectorAll('.reveal');
@@ -968,6 +980,37 @@ footer strong { color: var(--amarillo); }
     });
   }, { threshold: 0.1 });
   reveals.forEach(function(el) { observer.observe(el); });
+
+  (function () {
+    var thresholds = [25, 50, 75, 90];
+    var sent = {};
+
+    function getScrollPercent() {
+      var scrollTop = window.scrollY || window.pageYOffset;
+      var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      if (docHeight <= 0) return 100;
+      return Math.round((scrollTop / docHeight) * 100);
+    }
+
+    function trackScrollDepth() {
+      var percent = getScrollPercent();
+
+      thresholds.forEach(function (threshold) {
+        if (percent >= threshold && !sent[threshold]) {
+          sent[threshold] = true;
+          if (typeof gtag === 'function') {
+            gtag('event', 'scroll_depth', {
+              percent_scrolled: threshold,
+              event_label: threshold + '%',
+              transport_type: 'beacon'
+            });
+          }
+        }
+      });
+    }
+
+    window.addEventListener('scroll', trackScrollDepth, { passive: true });
+  })();
 </script>
 </body>
 </html>
