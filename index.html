@@ -45,8 +45,8 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: var(
 
 /* HERO */
 .hero { min-height: 100vh; background: var(--verde-bg); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 50px 2rem 0.75rem; position: relative; overflow: hidden; }
-.hero::before { content: ''; position: absolute; top: -120px; right: -120px; width: 500px; height: 500px; background: var(--rosa); border-radius: 50%; opacity: .08; }
-.hero::after { content: ''; position: absolute; bottom: -100px; left: -100px; width: 400px; height: 400px; background: var(--rosa); border-radius: 50%; opacity: .07; }
+.hero::before { content: ''; position: absolute; top: -120px; right: -120px; width: 500px; height: 500px; background: var(--rosa); border-radius: 50%; opacity: .08; pointer-events: none; }
+.hero::after { content: ''; position: absolute; bottom: -100px; left: -100px; width: 400px; height: 400px; background: var(--rosa); border-radius: 50%; opacity: .07; pointer-events: none; }
 .hero h1 { font-family: 'Baloo 2', cursive; font-size: clamp(5rem, 15vw, 12rem); font-weight: 900; color: #efcad2 !important; line-height: .95; letter-spacing: 2px; animation: fadeDown .6s .1s ease both; }
 .hero-subtitle { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(1.3rem, 3.5vw, 2.5rem); font-weight: 400; color: var(--blanco); letter-spacing: 2px; margin: 0 0 2rem; animation: fadeDown .6s .3s ease both; }
 .hero-meta { display: flex; gap: 1.5rem; flex-wrap: wrap; justify-content: center; margin-bottom: 2.5rem; animation: fadeDown .6s .45s ease both; }
