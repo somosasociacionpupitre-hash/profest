@@ -43,6 +43,21 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: var(
 .nav-cta:hover { background: var(--rosa-dark) !important; }
 @media (max-width: 768px) { .nav-links { display: none; } }
 
+/* HAMBURGER */
+.nav-hamburger { display: none; flex-direction: column; justify-content: center; gap: 5px; cursor: pointer; padding: 4px; background: none; border: none; z-index: 101; }
+.nav-hamburger span { display: block; width: 25px; height: 2px; background: var(--rosa); border-radius: 2px; transition: all .3s ease; }
+.nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-hamburger.open span:nth-child(2) { opacity: 0; }
+.nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+@media (max-width: 768px) {
+  .nav-hamburger { display: flex; }
+  .nav-links { display: none; flex-direction: column; gap: 0; list-style: none; position: fixed; top: 60px; left: 0; right: 0; background: var(--verde-dark); padding: 1rem 0; box-shadow: 0 4px 20px rgba(0,0,0,.3); z-index: 100; }
+  .nav-links.open { display: flex; }
+  .nav-links li { text-align: center; }
+  .nav-links a { display: block; padding: .85rem 2rem; font-size: .9rem; }
+  .nav-cta { margin: .5rem auto; display: inline-block !important; }
+}
+  
 /* HERO */
 .hero { min-height: 100vh; background: var(--verde-bg); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 50px 2rem 0.75rem; position: relative; overflow: hidden; }
 .hero::before { content: ''; position: absolute; top: -120px; right: -120px; width: 500px; height: 500px; background: var(--rosa); border-radius: 50%; opacity: .08; pointer-events: none; }
@@ -282,6 +297,9 @@ footer strong { color: var(--rosa); font-family: 'Baloo 2', cursive; }
   </a>
 </li>
   </ul>
+  <button class="nav-hamburger" id="nav-hamburger" onclick="toggleMenu()" aria-label="Menú">
+    <span></span><span></span><span></span>
+  </button>
 </nav>
 
 <!-- HERO -->
