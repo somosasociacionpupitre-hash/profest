@@ -262,42 +262,8 @@ section { padding: 5rem 1.5rem; }
 .ci-value { font-family: 'Baloo 2', cursive; font-weight: 800; font-size: 1rem; color: var(--rosa); }
 .cta-final { background: var(--rosa); color: var(--negro-suave); font-family: 'Baloo 2', cursive; font-weight: 800; font-size: 1.2rem; padding: 1.1rem 3.5rem; border-radius: 50px; text-decoration: none; display: inline-block; transition: transform .2s, box-shadow .2s; box-shadow: 0 8px 30px rgba(0,0,0,.3); }
 .cta-final:hover { transform: translateY(-3px) scale(1.03); background: var(--rosa-dark); }
-<style>
-.cta-sticky-mobile {
-  display: none;
-}
 
-@media (max-width: 768px) {
-  body {
-    padding-bottom: 88px;
-  }
-
-  .cta-sticky-mobile {
-    position: fixed;
-    left: 16px;
-    right: 16px;
-    bottom: 16px;
-    z-index: 999;
-    display: block;
-    background: var(--rosa);
-    color: var(--negro-suave);
-    text-decoration: none;
-    text-align: center;
-    font-family: 'Baloo 2', cursive;
-    font-weight: 800;
-    font-size: 1.05rem;
-    padding: 0.95rem 1.25rem;
-    border-radius: 999px;
-    box-shadow: 0 10px 30px rgba(0,0,0,.22);
-    border: 2px solid rgba(255,255,255,.35);
-  }
-
-  .cta-sticky-mobile:hover {
-    background: var(--rosa-dark);
-  }
-}
-</style>
-
+  
 /* FOOTER */
 footer { background: #111; text-align: center; padding: 2rem; color: rgba(255,255,255,.35); font-family: 'Nunito', sans-serif; font-size: .85rem; }
 footer strong { color: var(--rosa); font-family: 'Baloo 2', cursive; }
@@ -1110,15 +1076,7 @@ Quiero inscribirme →
   revealEls.forEach(function(el) { observer.observe(el); });
 </script>
 
-  <a href="https://forms.gle/GzAzezB2j88HUoYJ8"
-   target="_blank"
-   class="cta-sticky-mobile"
-   onclick="gtag('event', 'click_inscripcion', {
-     event_label: 'sticky_mobile',
-     transport_type: 'beacon'
-   });">
-  Reservar plaza
-</a>
+
 
 </body>
 </html>
