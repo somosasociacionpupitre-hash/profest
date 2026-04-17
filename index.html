@@ -267,7 +267,25 @@ section { padding: 5rem 1.5rem; }
 /* FOOTER */
 footer { background: #111; text-align: center; padding: 2rem; color: rgba(255,255,255,.35); font-family: 'Nunito', sans-serif; font-size: .85rem; }
 footer strong { color: var(--rosa); font-family: 'Baloo 2', cursive; }
-
+.footer-collab {
+  display: flex; flex-direction: column; align-items: center;
+  gap: .75rem; margin-top: 1.5rem; padding-top: 1.5rem;
+  border-top: 1px solid rgba(255,255,255,.08);
+}
+.footer-collab-label {
+  font-family: 'Nunito', sans-serif; font-size: .75rem;
+  font-weight: 700; letter-spacing: 3px; text-transform: uppercase;
+  color: rgba(255,255,255,.3);
+}
+.footer-collab-logo {
+  background: white; border-radius: 12px;
+  padding: .6rem 1.2rem; display: inline-flex;
+  align-items: center; justify-content: center;
+}
+.footer-collab-logo img {
+  height: 48px; width: auto; display: block;
+}
+  
 /* ANIMACIONES */
 @keyframes fadeDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
 .reveal { opacity: 1; transform: none; transition: opacity .6s ease, transform .6s ease; }
@@ -1040,6 +1058,13 @@ Quiero inscribirme →
         <div class="ci-label">Correo electrónico</div>
         <div class="ci-value">somosasociacionpupitre@gmail.com</div>
       </a>
+      <div class="footer-collab">
+          <span class="footer-collab-label">En colaboración con</span>
+        <div class="footer-collab-logo">
+        <img src="ayto_castronuno.jpeg"
+         alt="Ayuntamiento de Castronuño">
+        </div>
+      </div>
       <a href="https://instagram.com/profest_oficial" target="_blank" class="contacto-item reveal">
         <div class="ci-icon">&#128247;</div>
         <div class="ci-label">Redes sociales</div>
