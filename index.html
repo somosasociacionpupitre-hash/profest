@@ -229,6 +229,22 @@ section { padding: 5rem 1.5rem; }
 .desde-quote { flex: 0 0 300px; background: var(--verde-dark); border-radius: 20px; padding: 2rem; color: var(--blanco); font-family: 'Nunito', sans-serif; font-weight: 700; font-size: 1rem; line-height: 1.8; }
 @media (max-width: 768px) { .desde-flex { flex-direction: column; } .desde-quote { flex: unset; width: 100%; } }
 
+/* CONCILIACION */
+#conciliacion { background: var(--crema); }
+#conciliacion .section-title { color: var(--verde-dark); }
+.conciliacion-intro { font-family: 'Nunito', sans-serif; font-size: 1.08rem; color: var(--gris); line-height: 1.8; margin-bottom: 2.5rem; max-width: 700px; }
+.conciliacion-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; margin-bottom: 2.5rem; }
+.conci-card { background: white; border-radius: 20px; padding: 1.8rem 1.5rem; box-shadow: 0 4px 20px rgba(0,0,0,.07); border-top: 4px solid var(--rosa); transition: transform .2s; }
+.conci-card:hover { transform: translateY(-4px); }
+.conci-card .emoji { font-size: 2.2rem; margin-bottom: .8rem; }
+.conci-card h4 { font-family: 'Baloo 2', cursive; font-weight: 800; color: var(--verde-dark); font-size: 1.1rem; margin-bottom: .6rem; letter-spacing: .5px; }
+.conci-card p { font-family: 'Nunito', sans-serif; font-size: .9rem; color: var(--gris); line-height: 1.6; }
+.conci-alert { background: var(--verde-dark); border-radius: 20px; padding: 2rem 2.5rem; display: flex; align-items: flex-start; gap: 1.2rem; flex-wrap: wrap; }
+.conci-alert .emoji { font-size: 2rem; flex-shrink: 0; }
+.conci-alert-text h4 { font-family: 'Baloo 2', cursive; font-weight: 800; color: var(--rosa); font-size: 1.2rem; margin-bottom: .4rem; }
+.conci-alert-text p { font-family: 'Nunito', sans-serif; font-size: .95rem; color: rgba(255,255,255,.88); line-height: 1.7; }
+.conci-alert-text a { color: var(--rosa); font-weight: 700; }
+  
 /* FAQ */
 #faq { background: #f0ebe4; }
 #faq .section-title { color: var(--verde-dark); }
@@ -302,6 +318,7 @@ footer strong { color: var(--rosa); font-family: 'Baloo 2', cursive; }
     <li><a href="#que-es">Qué es</a></li>
     <li><a href="#cursos">Cursos</a></li>
     <li><a href="#tarifas">Tarifas</a></li>
+    <li><a href="#conciliacion">Conciliación</a></li>
     <li><a href="#faq">FAQ</a></li>
     <li>
   <a href="https://forms.gle/GzAzezB2j88HUoYJ8"
@@ -932,6 +949,43 @@ Quiero inscribirme →
   </div>
 </section>
 
+<!-- CONCILIACIÓN FAMILIAR -->
+<section id="conciliacion">
+  <div class="section-inner">
+    <div class="section-tag reveal">Conciliación</div>
+    <h2 class="section-title reveal">CONCILIACIÓN FAMILIAR</h2>
+    <p class="conciliacion-intro reveal">
+      <strong>SÍ, SE PUEDE.</strong> Queremos que todas las personas interesadas podáis apuntaros al Profest. Por eso, queremos poneros fácil un tema tan importante: conciliar la formación y los cuidados.
+    </p>
+
+    <div class="conciliacion-cards">
+      <div class="conci-card reveal">
+        <div class="emoji">🏕️</div>
+        <h4>CAMPAMENTO URBANO</h4>
+        <p>Si tus peques tienen entre 3 y 12 años, podrán unirse de manera gratuita los días 25, 26 y 27 de agosto al campamento urbano organizado por el Ayuntamiento en horario de 10 a 14h.</p>
+      </div>
+      <div class="conci-card reveal">
+        <div class="emoji">⛺</div>
+        <h4>ACAMPADA</h4>
+        <p>Aquellas participantes del Profest 2026 y sus familias podrán acampar de manera totalmente gratuita en la zona habilitada para el evento.</p>
+      </div>
+      <div class="conci-card reveal">
+        <div class="emoji">🎟️</div>
+        <h4>PLAZAS LIMITADAS</h4>
+        <p>Por logística, solo podemos asegurar una plaza para las 6 primeras peques apuntadas al campamento urbano. Si esta opción te facilita la conciliación familiar, ¡no tardes mucho en escribirnos!</p>
+      </div>
+    </div>
+
+    <div class="conci-alert reveal">
+      <div class="emoji">📋</div>
+      <div class="conci-alert-text">
+        <h4>INSCRIPCIÓN</h4>
+        <p>¿Te interesa esta opción? Rellena el formulario en este enlace y reserva tu plaza para el campamento urbano o la acampada: <a href="https://forms.gle/GzAzezB2j88HUoYJ8" target="_blank">Formulario de inscripción →</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+  
 <!-- FAQ -->
 <section id="faq">
   <div class="section-inner">
