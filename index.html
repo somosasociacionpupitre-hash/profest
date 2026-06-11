@@ -301,6 +301,35 @@ footer strong { color: var(--rosa); font-family: 'Baloo 2', cursive; }
 .footer-collab-logo img {
   height: 160px; width: auto; display: block;
 }
+
+/* APOYO Y MERCHAN */
+#apoyo { background: var(--crema); }
+#apoyo .section-title { color: var(--verde-dark); }
+.apoyo-intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 2.5rem; }
+@media (max-width: 700px) { .apoyo-intro-grid { grid-template-columns: 1fr; } }
+.apoyo-motivo, .apoyo-para-que { background: white; border-radius: 20px; padding: 1.8rem; box-shadow: 0 4px 20px rgba(0,0,0,.06); }
+.apoyo-motivo { border-top: 4px solid var(--rosa-dark); }
+.apoyo-para-que { border-top: 4px solid var(--verde); }
+.apoyo-motivo h4, .apoyo-para-que h4 { font-family: 'Baloo 2', cursive; font-weight: 800; font-size: 1.1rem; color: var(--verde-dark); margin-bottom: .7rem; }
+.apoyo-motivo p, .apoyo-para-que p { font-family: 'Nunito', sans-serif; font-size: .93rem; color: var(--gris); line-height: 1.7; }
+.apoyo-cuotas-title { font-family: 'Baloo 2', cursive; font-weight: 800; font-size: 1.5rem; color: var(--verde-dark); margin-bottom: 1.2rem; text-align: center; }
+.apoyo-cuotas-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1.2rem; margin-bottom: 2.5rem; }
+.apoyo-card { border-radius: 20px; padding: 1.8rem 1.4rem; text-align: center; transition: transform .2s, box-shadow .2s; }
+.apoyo-card:hover { transform: translateY(-5px); box-shadow: 0 16px 40px rgba(0,0,0,.13); }
+.apoyo-card.c10 { background: white; border: 2.5px solid var(--rosa-dark); }
+.apoyo-card.c30 { background: var(--rosa); }
+.apoyo-card.c50 { background: var(--verde); color: var(--blanco); }
+.apoyo-card.c80 { background: var(--verde-dark); color: var(--blanco); }
+.apoyo-card.c150 { background: var(--negro-suave); color: var(--blanco); }
+.apoyo-card .apoyo-emoji { font-size: 2rem; margin-bottom: .6rem; display: block; }
+.apoyo-card .apoyo-precio { font-family: 'Baloo 2', cursive; font-weight: 900; font-size: 2.6rem; line-height: 1; margin-bottom: .4rem; color: var(--verde-dark); }
+.apoyo-card.c50 .apoyo-precio, .apoyo-card.c80 .apoyo-precio, .apoyo-card.c150 .apoyo-precio { color: var(--rosa); }
+.apoyo-card .apoyo-desc { font-family: 'Nunito', sans-serif; font-size: .83rem; line-height: 1.5; opacity: .85; }
+.apoyo-card.c10 .apoyo-desc { color: var(--gris); }
+.apoyo-cta-box { text-align: center; background: var(--verde-dark); border-radius: 24px; padding: 2.5rem 2rem; }
+.apoyo-cta-box p { font-family: 'Nunito', sans-serif; color: rgba(255,255,255,.85); font-size: 1rem; line-height: 1.7; margin-bottom: 1.5rem; }
+.apoyo-btn { display: inline-block; background: var(--rosa); color: var(--negro-suave); font-family: 'Baloo 2', cursive; font-weight: 800; font-size: 1.1rem; padding: .9rem 2.5rem; border-radius: 50px; text-decoration: none; transition: transform .2s, background .2s, box-shadow .2s; box-shadow: 0 8px 30px rgba(239,202,210,.3); }
+.apoyo-btn:hover { transform: translateY(-3px); background: var(--rosa-dark); }
   
 /* ANIMACIONES */
 @keyframes fadeDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
@@ -319,6 +348,7 @@ footer strong { color: var(--rosa); font-family: 'Baloo 2', cursive; }
     <li><a href="#cursos">Cursos</a></li>
     <li><a href="#tarifas">Tarifas</a></li>
     <li><a href="#conciliacion">Conciliación</a></li>
+    <li><a href="#apoyo">Merchan</a></li>
     <li><a href="#faq">FAQ</a></li>
     <li>
   <a href="https://forms.gle/GzAzezB2j88HUoYJ8"
@@ -1100,6 +1130,60 @@ Quiero inscribirme →
   </div>
 </section>
 
+<!-- APOYO Y MERCHAN -->
+<section id="apoyo">
+  <div class="section-inner">
+    <div class="section-tag reveal">¿No puedes venir?</div>
+    <div class="section-title reveal">Apoyo y Merchan</div>
+
+    <div class="apoyo-intro-grid">
+      <div class="apoyo-motivo reveal">
+        <h4>💛 Motivo</h4>
+        <p>Muchas nos habéis contado que no podéis venir este año pero queréis apoyar el proyecto. Por eso, hemos pensado en este formato en el que aportas económicamente al Profest y, a cambio, te llevas un detallito para recordarlo.</p>
+      </div>
+      <div class="apoyo-para-que reveal">
+        <h4>🎯 ¿Para qué?</h4>
+        <p>Todo lo recaudado irá íntegramente a ofrecer una mayor calidad durante el Profest 2026. Rellenando el formulario de abajo puedes solicitarlo fácilmente.</p>
+      </div>
+    </div>
+
+    <div class="apoyo-cuotas-title reveal">Cuotas de apoyo</div>
+    <div class="apoyo-cuotas-grid">
+      <div class="apoyo-card c10 reveal">
+        <span class="apoyo-emoji">🌱</span>
+        <div class="apoyo-precio">10€</div>
+        <div class="apoyo-desc">Agradecimiento en la web con tu nombre y apellidos (si quieres que aparezcan).</div>
+      </div>
+      <div class="apoyo-card c30 reveal">
+        <span class="apoyo-emoji">✏️</span>
+        <div class="apoyo-precio">30€</div>
+        <div class="apoyo-desc">Estuche Profest.</div>
+      </div>
+      <div class="apoyo-card c50 reveal">
+        <span class="apoyo-emoji">🍵</span>
+        <div class="apoyo-precio">50€</div>
+        <div class="apoyo-desc">Botella o taza Profest.</div>
+      </div>
+      <div class="apoyo-card c80 reveal">
+        <span class="apoyo-emoji">🛍️</span>
+        <div class="apoyo-precio">80€</div>
+        <div class="apoyo-desc">Totebag Profest.</div>
+      </div>
+      <div class="apoyo-card c150 reveal">
+        <span class="apoyo-emoji">🌟</span>
+        <div class="apoyo-precio">150€</div>
+        <div class="apoyo-desc">Agradecimiento en la web + estuche + botella o taza + totebag Profest.</div>
+      </div>
+    </div>
+
+    <div class="apoyo-cta-box reveal">
+      <p>¿Quieres apoyar el Profest desde casa? Rellena el formulario y nos ponemos en contacto contigo para gestionarlo.</p>
+      <a href="https://forms.gle/SBXRGFzZTGWvzEFB8" target="_blank" class="apoyo-btn">Quiero apoyar el Profest →</a>
+    </div>
+  </div>
+</section>
+
+  
 <!-- CONTACTO -->
 <section id="contacto">
   <div class="section-inner">
