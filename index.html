@@ -293,13 +293,27 @@ footer strong { color: var(--rosa); font-family: 'Baloo 2', cursive; }
   font-weight: 700; letter-spacing: 3px; text-transform: uppercase;
   color: rgba(255,255,255,.3);
 }
+.footer-collab-logos {
+  display: flex; flex-wrap: wrap; justify-content: center;
+  gap: 1.5rem;
+}
+.footer-collab-logo-item {
+  display: flex; flex-direction: column; align-items: center;
+  gap: .5rem; max-width: 150px;
+}
 .footer-collab-logo {
   background: white; border-radius: 12px;
-  padding: .6rem 1.2rem; display: inline-flex;
+  padding: .6rem 1rem; display: inline-flex;
   align-items: center; justify-content: center;
+  min-height: 70px; width: 100%;
 }
 .footer-collab-logo img {
-  height: 160px; width: auto; display: block;
+  max-height: 70px; max-width: 100%; width: auto; display: block;
+}
+.footer-collab-name {
+  font-family: 'Nunito', sans-serif; font-size: .68rem;
+  font-weight: 700; color: rgba(255,255,255,.5);
+  text-align: center; line-height: 1.3;
 }
 
 /* APOYO Y MERCHAN */
@@ -331,7 +345,19 @@ footer strong { color: var(--rosa); font-family: 'Baloo 2', cursive; }
 .apoyo-btn { display: inline-block; background: var(--rosa); color: var(--negro-suave); font-family: 'Baloo 2', cursive; font-weight: 800; font-size: 1.1rem; padding: .9rem 2.5rem; border-radius: 50px; text-decoration: none; transition: transform .2s, background .2s, box-shadow .2s; box-shadow: 0 8px 30px rgba(239,202,210,.3); }
 .apoyo-btn:hover { transform: translateY(-3px); background: var(--rosa-dark); }
 .apoyo-img { width: 100%; border-radius: 20px; margin-bottom: 2.5rem; display: block; object-fit: cover; max-height: 420px; }
-  
+
+/* AGRADECIMIENTOS */
+#agradecimientos { background: var(--verde-bg); }
+#agradecimientos .section-title { color: var(--rosa); }
+#agradecimientos .section-tag { color: rgba(255,255,255,.6); }
+#agradecimientos > .section-inner > p { font-family: 'Nunito', sans-serif; color: rgba(255,255,255,.85); font-size: 1.05rem; margin-bottom: 2rem; line-height: 1.7; }
+#agradecimientos .destacado { color: var(--rosa); font-weight: 900; }
+.agradecimientos-lista { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; row-gap: .7rem; margin-top: 1rem; }
+.agradecimiento-item { font-family: 'Nunito', sans-serif; font-weight: 700; color: var(--blanco); font-size: 1.05rem; transition: opacity .2s; }
+.agradecimiento-item:hover { opacity: .8; }
+.agradecimiento-item.entidad { color: var(--rosa); }
+.agradecimiento-sep { color: rgba(255,255,255,.35); font-size: 1.05rem; margin: 0 .9rem; }
+    
 /* ANIMACIONES */
 @keyframes fadeDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
 .reveal { opacity: 1; transform: none; transition: opacity .6s ease, transform .6s ease; }
@@ -350,6 +376,7 @@ footer strong { color: var(--rosa); font-family: 'Baloo 2', cursive; }
     <li><a href="#tarifas">Tarifas</a></li>
     <li><a href="#conciliacion">Conciliación</a></li>
     <li><a href="#apoyo">Merchan</a></li>
+    <li><a href="#agradecimientos">Gracias</a></li>
     <li><a href="#faq">FAQ</a></li>
     <li>
   <a href="https://forms.gle/GzAzezB2j88HUoYJ8"
@@ -919,6 +946,19 @@ Quiero inscribirme →
     </div>
   </div>
 </section>
+
+<!-- AGRADECIMIENTOS -->
+<section id="agradecimientos">
+  <div class="section-inner">
+    <div class="section-tag reveal">Gracias</div>
+    <div class="section-title reveal">Agradecimientos</div>
+    <p>El Profest 2026 es posible gracias al apoyo de estas personas y entidades. <span class="destacado">¡Gracias de corazón!</span></p>
+
+    <div class="agradecimientos-lista reveal">
+      <span class="agradecimiento-item">Lucía Jiménez Hernández</span><span class="agradecimiento-sep">&middot;</span><span class="agradecimiento-item">Pablo García-Perrote</span><span class="agradecimiento-sep">&middot;</span><span class="agradecimiento-item">Pepa Flores Infante</span><span class="agradecimiento-sep">&middot;</span><span class="agradecimiento-item">Carmen Aceituno Aranda</span><span class="agradecimiento-sep">&middot;</span><span class="agradecimiento-item">Anónimo</span><span class="agradecimiento-sep">&middot;</span><span class="agradecimiento-item entidad">VIA Consultoría Educativa</span><span class="agradecimiento-sep">&middot;</span><span class="agradecimiento-item entidad">Podocentia</span><span class="agradecimiento-sep">&middot;</span><span class="agradecimiento-item entidad">Adrián Cuesta Comunicación &amp; Media</span><span class="agradecimiento-sep">&middot;</span><span class="agradecimiento-item entidad">Ayuntamiento de Castronuño</span><span class="agradecimiento-sep">&middot;</span><span class="agradecimiento-item entidad">CRA Florida del Duero</span><span class="agradecimiento-sep">&middot;</span><span class="agradecimiento-item entidad">CRA La Esgueva</span><span class="agradecimiento-sep">&middot;</span><span class="agradecimiento-item entidad">Bar de las Piscinas de Castronuño</span>
+    </div>
+  </div>
+</section>
   
 <!-- FAQ -->
 <section id="faq">
@@ -1060,11 +1100,51 @@ Quiero inscribirme →
     </div>
     <a href="https://forms.gle/GzAzezB2j88HUoYJ8" target="_blank" class="cta-final reveal">¡Quiero inscribirme en PROFEST 2026!</a>
   </div>
-   <div class="footer-collab">
-          <span class="footer-collab-label">En colaboración con<br>AYUNTAMIENTO DE CASTRONUÑO</span>
-        <div class="footer-collab-logo">
-        <img src="ayto_castronuno.png"
-         alt="Ayuntamiento de Castronuño">
+  <div class="footer-collab">
+          <span class="footer-collab-label">En colaboración con</span>
+        <div class="footer-collab-logos">
+          <div class="footer-collab-logo-item">
+            <div class="footer-collab-logo">
+              <img src="VIA.jpg" alt="VIA Consultoría Educativa">
+            </div>
+            <span class="footer-collab-name">VIA Consultoría Educativa</span>
+          </div>
+          <div class="footer-collab-logo-item">
+            <div class="footer-collab-logo">
+              <img src="podocentia.png" alt="Podocentia">
+            </div>
+            <span class="footer-collab-name">Podocentia</span>
+          </div>
+          <div class="footer-collab-logo-item">
+            <div class="footer-collab-logo">
+              <img src="adriancuesta.png" alt="Adrián Cuesta Comunicación &amp; Media">
+            </div>
+            <span class="footer-collab-name">Adrián Cuesta Comunicación &amp; Media</span>
+          </div>
+          <div class="footer-collab-logo-item">
+            <div class="footer-collab-logo">
+              <img src="ayto_castronuno.png" alt="Ayuntamiento de Castronuño">
+            </div>
+            <span class="footer-collab-name">Ayuntamiento de Castronuño</span>
+          </div>
+          <div class="footer-collab-logo-item">
+            <div class="footer-collab-logo">
+              <img src="CRAFlorida.jpg" alt="CRA Florida del Duero">
+            </div>
+            <span class="footer-collab-name">CRA Florida del Duero</span>
+          </div>
+          <div class="footer-collab-logo-item">
+            <div class="footer-collab-logo">
+              <img src="CRAEsgueva.jpg" alt="CRA La Esgueva">
+            </div>
+            <span class="footer-collab-name">CRA La Esgueva</span>
+          </div>
+          <div class="footer-collab-logo-item">
+            <div class="footer-collab-logo">
+              <img src="bar_piscinas.jpg" alt="Bar de las Piscinas de Castronuño">
+            </div>
+            <span class="footer-collab-name">Bar de las Piscinas de Castronuño</span>
+          </div>
         </div>
       </div>
 </section>
