@@ -108,23 +108,211 @@ section { padding: 5rem 1.5rem; }
 .cuando-foto-placeholder p { font-family: 'Nunito', sans-serif; font-size: .9rem; font-weight: 600; }
 @media (max-width: 768px) { .cuando-flex { flex-direction: column; } .cuando-foto { flex: unset; width: 100%; } }
 
-/* COMO FUNCIONA */
-#como { background: var(--crema); }
-#como .section-title { color: var(--verde-dark); }
-.como-layout { display: flex; gap: 2.5rem; align-items: flex-start; flex-wrap: wrap; margin-top: 2rem; }
-.como-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1.2rem; flex: 1; min-width: 280px; }
-.como-item { background: white; border-radius: 20px; padding: 1.5rem 1.2rem; text-align: center; box-shadow: 0 4px 20px rgba(0,0,0,.06); border-top: 4px solid var(--rosa); transition: transform .2s; }
-.como-item:hover { transform: translateY(-4px); }
-.como-item .emoji { font-size: 2.2rem; margin-bottom: .8rem; }
-.como-item h4 { font-family: 'Baloo 2', cursive; font-weight: 800; color: var(--verde-dark); margin-bottom: .4rem; font-size: 1.05rem; }
-.como-item p { font-family: 'Nunito', sans-serif; font-size: .83rem; color: var(--gris); line-height: 1.5; }
-.horario-mini { flex: 0 0 260px; background: var(--verde-dark); border-radius: 20px; padding: 1.8rem; color: var(--blanco); box-shadow: 0 8px 30px rgba(0,0,0,.15); }
-.horario-mini h4 { font-family: 'Baloo 2', cursive; font-weight: 800; font-size: 1.3rem; color: var(--rosa); letter-spacing: 1px; margin-bottom: 1.2rem; }
-.h-item { display: flex; gap: .8rem; align-items: baseline; padding: .5rem 0; border-bottom: 1px solid rgba(255,255,255,.1); font-size: .83rem; }
-.h-item:last-child { border-bottom: none; }
-.h-time { color: var(--rosa); font-family: 'Baloo 2', cursive; font-weight: 700; min-width: 80px; font-size: .78rem; flex-shrink: 0; }
-.h-desc { font-family: 'Nunito', sans-serif; color: rgba(255,255,255,.85); line-height: 1.4; }
-@media (max-width: 768px) { .como-layout { flex-direction: column; } .horario-mini { flex: unset; width: 100%; } }
+/* HORARIOS */
+#horarios {
+  background: var(--crema);
+}
+
+#horarios .section-title {
+  color: var(--verde-dark);
+}
+
+.horarios-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.dia-card {
+  background: var(--blanco);
+  border: 1px solid rgba(58, 99, 88, .12);
+  border-radius: 24px;
+  padding: 1.8rem;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, .06);
+}
+
+.dia-titulo {
+  font-family: 'Baloo 2', cursive;
+  color: var(--verde-dark);
+  font-size: 1.8rem;
+  font-weight: 800;
+  line-height: 1;
+  padding-bottom: .7rem;
+  margin-bottom: .35rem;
+  border-bottom: 4px solid var(--rosa);
+}
+
+.evento {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(58, 99, 88, .13);
+}
+
+.evento:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.evento-hora {
+  font-family: 'Baloo 2', cursive;
+  color: var(--verde-dark);
+  font-size: .95rem;
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+.evento-nombre {
+  font-family: 'Nunito', sans-serif;
+  color: var(--negro-suave);
+  font-size: .95rem;
+  font-weight: 800;
+  line-height: 1.4;
+}
+
+.evento-lugar {
+  display: block;
+  margin-top: .15rem;
+  font-family: 'Playfair Display', serif;
+  color: var(--verde);
+  font-size: .88rem;
+  font-style: italic;
+  line-height: 1.4;
+}
+
+.opcion-horario {
+  display: grid;
+  grid-template-columns: 28px 1fr;
+  gap: .5rem;
+  align-items: start;
+}
+
+.opcion-horario + .opcion-horario {
+  margin-top: .85rem;
+}
+
+.opcion-letra {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: var(--rosa);
+  color: var(--verde-dark);
+  font-family: 'Baloo 2', cursive;
+  font-size: .8rem;
+  font-weight: 900;
+}
+
+/* BLOQUE TODOS LOS DÍAS */
+.todos-dias {
+  margin-top: 1.5rem;
+  padding: 2rem;
+  background: var(--verde-dark);
+  color: var(--blanco);
+  border-radius: 24px;
+  text-align: center;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, .13);
+}
+
+.todos-dias h3 {
+  display: inline-block;
+  margin-bottom: 1.3rem;
+  padding: 0 1.5rem .35rem;
+  border-bottom: 4px solid var(--rosa);
+  color: var(--rosa);
+  font-family: 'Baloo 2', cursive;
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.todos-curso {
+  margin-bottom: 1.5rem;
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+}
+
+.todos-curso strong {
+  color: var(--rosa);
+}
+
+.todos-curso .evento-lugar {
+  color: rgba(255, 255, 255, .8);
+}
+
+.comidas-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  padding-top: 1.4rem;
+  border-top: 1px solid rgba(255, 255, 255, .18);
+}
+
+.comida-item {
+  font-family: 'Nunito', sans-serif;
+}
+
+.comida-item strong {
+  display: block;
+  margin-bottom: .2rem;
+  color: var(--rosa);
+  font-family: 'Baloo 2', cursive;
+  font-size: 1.05rem;
+}
+
+.comida-item span {
+  font-size: .9rem;
+  font-weight: 700;
+}
+
+.todos-nota {
+  margin-top: 1.3rem;
+  color: rgba(255, 255, 255, .72);
+  font-family: 'Nunito', sans-serif;
+  font-size: .78rem;
+  line-height: 1.5;
+}
+
+.todos-lugar {
+  display: block;
+  margin-top: .25rem;
+  color: rgba(255, 255, 255, .82);
+  font-family: 'Playfair Display', serif;
+  font-size: .9rem;
+  font-style: italic;
+}
+
+/* VERSIÓN MÓVIL */
+@media (max-width: 768px) {
+  .horarios-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dia-card {
+    padding: 1.4rem;
+  }
+
+  .evento {
+    grid-template-columns: 1fr;
+    gap: .2rem;
+  }
+
+  .evento-hora {
+    color: var(--rosa-dark);
+  }
+
+  .comidas-row {
+    grid-template-columns: 1fr;
+  }
+
+  .comida-item {
+    padding: .65rem 0;
+  }
+}
 
 /* CURSOS */
 #cursos { background: var(--verde-dark); }
@@ -376,6 +564,7 @@ footer strong { color: var(--rosa); font-family: 'Baloo 2', cursive; }
     <li><a href="#tarifas">Tarifas</a></li>
     <li><a href="#conciliacion">Conciliación</a></li>
     <li><a href="#apoyo">Merchan</a></li>
+    <li><a href="#horarios">Horarios</a></li>
     <li><a href="#faq">FAQ</a></li>
     <li><a href="#agradecimientos">Gracias</a></li>
     <li>
@@ -485,46 +674,189 @@ Quiero inscribirme →
   </div>
 </section>
 
-<!-- COMO FUNCIONA -->
-<section id="como">
+<!-- HORARIOS -->
+<section id="horarios">
   <div class="section-inner">
-    <div class="section-tag reveal">¿Cómo funciona?</div>
-    <div class="section-title reveal" style="color:var(--verde-dark)">Cuatro días con ritmo,<br>sin agobios.</div>
-    <div class="como-layout">
-      <div class="como-grid">
-        <div class="como-item reveal">
-          <div class="emoji">&#129504;</div>
-          <h4>Curso intensivo</h4>
-          <p>Formación práctica con metodologías activas cada mañana. 12 horas en total.</p>
+
+    <div class="section-tag reveal">Programa del encuentro</div>
+    <div class="section-title reveal">Horarios</div>
+
+    <div class="horarios-grid">
+
+      <!-- LUNES -->
+      <article class="dia-card reveal">
+        <h3 class="dia-titulo">Lunes 24</h3>
+
+        <div class="evento">
+          <div class="evento-hora">12:00–18:30</div>
+          <div>
+            <div class="evento-nombre">Recepción</div>
+            <span class="evento-lugar">Zona de acampada</span>
+          </div>
         </div>
-        <div class="como-item reveal">
-          <div class="emoji">&#127912;</div>
-          <h4>Talleres</h4>
-          <p>Espacios opcionales para explorar distintas áreas por las tardes.</p>
+
+        <div class="evento">
+          <div class="evento-hora">18:00–19:00</div>
+          <div>
+            <div class="evento-nombre">Acogida</div>
+            <span class="evento-lugar">La Muela</span>
+          </div>
         </div>
-        <div class="como-item reveal">
-          <div class="emoji">&#127749;</div>
-          <h4>Mañanas activas</h4>
-          <p>Propuestas opcionales de bienestar físico y emocional al despertar.</p>
+
+        <div class="evento">
+          <div class="evento-hora">19:00–21:30</div>
+          <div>
+            <div class="evento-nombre">Bienvenida y paseo guiado</div>
+            <span class="evento-lugar">La Muela</span>
+          </div>
         </div>
-        <div class="como-item reveal">
-          <div class="emoji">&#129309;</div>
-          <h4>Tejer redes y ocio</h4>
-          <p>Actividades para conocer y conectar con gente y disfrutar del verano en el pueblo.</p>
+      </article>
+
+      <!-- MARTES -->
+      <article class="dia-card reveal">
+        <h3 class="dia-titulo">Martes 25</h3>
+
+        <div class="evento">
+          <div class="evento-hora">8:00–9:00</div>
+          <div>
+            <div class="evento-nombre">Yoga integral</div>
+            <span class="evento-lugar">Escuelas</span>
+          </div>
         </div>
-      </div>
-      <div class="horario-mini reveal">
-        <h4>Horario tipo</h4>
-        <div class="h-item"><span class="h-time">8:00</span><span class="h-desc">Mañana activa (opcional)</span></div>
-        <div class="h-item"><span class="h-time">9:00</span><span class="h-desc">Desayuno</span></div>
-        <div class="h-item"><span class="h-time">10:00</span><span class="h-desc">Curso intensivo</span></div>
-        <div class="h-item"><span class="h-time">14:00</span><span class="h-desc">Comida</span></div>
-        <div class="h-item"><span class="h-time">15:30</span><span class="h-desc">Tiempo libre</span></div>
-        <div class="h-item"><span class="h-time">17:00</span><span class="h-desc">Talleres (opcional)</span></div>
-        <div class="h-item"><span class="h-time">21:00</span><span class="h-desc">Cena</span></div>
-        <div class="h-item"><span class="h-time">22:30</span><span class="h-desc">Ocio y comunidad</span></div>
-      </div>
+
+        <div class="evento">
+          <div class="evento-hora">18:00–20:00</div>
+
+          <div>
+            <div class="opcion-horario">
+              <span class="opcion-letra">A</span>
+              <div>
+                <div class="evento-nombre">Lectura por placer</div>
+                <span class="evento-lugar">Ayuntamiento</span>
+              </div>
+            </div>
+
+            <div class="opcion-horario">
+              <span class="opcion-letra">B</span>
+              <div>
+                <div class="evento-nombre">Tertulia dialógica</div>
+                <span class="evento-lugar">Centro de convivencia</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="evento">
+          <div class="evento-hora">22:30–23:45</div>
+          <div>
+            <div class="evento-nombre">Cinefórum</div>
+            <span class="evento-lugar">Centro cívico</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- MIÉRCOLES -->
+      <article class="dia-card reveal">
+        <h3 class="dia-titulo">Miércoles 26</h3>
+
+        <div class="evento">
+          <div class="evento-hora">8:00–9:00</div>
+          <div>
+            <div class="evento-nombre">Paseo meditativo</div>
+            <span class="evento-lugar">La Muela</span>
+          </div>
+        </div>
+
+        <div class="evento">
+          <div class="evento-hora">17:00–20:00</div>
+          <div>
+            <div class="evento-nombre">Educación rural</div>
+            <span class="evento-lugar">Ayuntamiento</span>
+          </div>
+        </div>
+
+        <div class="evento">
+          <div class="evento-hora">18:00–20:00</div>
+          <div>
+            <div class="evento-nombre">Buenas y malas prácticas</div>
+            <span class="evento-lugar">Centro de convivencia</span>
+          </div>
+        </div>
+
+        <div class="evento">
+          <div class="evento-hora">22:30–23:30</div>
+          <div>
+            <div class="evento-nombre">Taller de jotas</div>
+            <span class="evento-lugar">La Muela</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- JUEVES -->
+      <article class="dia-card reveal">
+        <h3 class="dia-titulo">Jueves 27</h3>
+
+        <div class="evento">
+          <div class="evento-hora">8:00–9:00</div>
+          <div>
+            <div class="evento-nombre">Movimiento consciente</div>
+            <span class="evento-lugar">Escuelas</span>
+          </div>
+        </div>
+
+        <div class="evento">
+          <div class="evento-hora">18:30–20:00</div>
+          <div>
+            <div class="evento-nombre">
+              Grabación del podcast Educación Revolucionaria y clausura del PROFEST
+            </div>
+            <span class="evento-lugar">Centro cívico</span>
+          </div>
+        </div>
+
+        <div class="evento">
+          <div class="evento-hora">Desde las 22:45</div>
+          <div>
+            <div class="evento-nombre">Fiesta de despedida</div>
+            <span class="evento-lugar">Piscinas</span>
+          </div>
+        </div>
+      </article>
+
     </div>
+
+    <!-- TODOS LOS DÍAS -->
+    <div class="todos-dias reveal">
+      <h3>Todos los días</h3>
+
+      <div class="todos-curso">
+        <strong>Cursos</strong> · 10:15–14:15
+        <span class="evento-lugar">Escuelas</span>
+      </div>
+
+      <div class="comidas-row">
+        <div class="comida-item">
+          <strong>Desayuno</strong>
+          <span>8:45–10:00*</span>
+        </div>
+
+        <div class="comida-item">
+          <strong>Comida</strong>
+          <span>14:15–15:45*</span>
+        </div>
+
+        <div class="comida-item">
+          <strong>Cena</strong>
+          <span>21:00–22:15*</span>
+        </div>
+      </div>
+
+      <p class="todos-nota">
+        * Se sirve comida hasta 15 minutos antes del cierre.
+        <span class="todos-lugar">Centro de convivencia</span>
+      </p>
+    </div>
+
   </div>
 </section>
 
