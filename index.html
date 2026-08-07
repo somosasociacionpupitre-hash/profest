@@ -107,9 +107,24 @@ section { padding: 5rem 1.5rem; }
 .cuando-foto-placeholder .ph-icon { font-size: 3rem; margin-bottom: .8rem; }
 .cuando-foto-placeholder p { font-family: 'Nunito', sans-serif; font-size: .9rem; font-weight: 600; }
 @media (max-width: 768px) { .cuando-flex { flex-direction: column; } .cuando-foto { flex: unset; width: 100%; } }
+.mapa-explicacion {
+  max-width: 800px;
+  margin: 2.5rem auto 1.2rem;
+  color: rgba(255, 255, 255, .82);
+  font-family: 'Playfair Display', serif;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  text-align: center;
+}
+
+.mapa-explicacion strong {
+  color: var(--rosa);
+}
+
 .mapa-encuentro {
   width: 100%;
-  margin-top: 2.5rem;
+  max-width: 900px;
+  margin: 0 auto;
   border: 2px solid rgba(239, 202, 210, .35);
   border-radius: 24px;
   overflow: hidden;
@@ -123,12 +138,16 @@ section { padding: 5rem 1.5rem; }
 }
 
 @media (max-width: 768px) {
-  .mapa-encuentro {
+  .mapa-explicacion {
     margin-top: 1.5rem;
+    font-size: .98rem;
+    text-align: left;
+  }
+
+  .mapa-encuentro {
     border-radius: 16px;
   }
 }
-
   
 /* HORARIOS */
 #horarios {
@@ -694,7 +713,10 @@ Quiero inscribirme →
         <img src="castronuno.png" alt="Vista del río Duero en Castronuño">
       </div>
     </div>
-
+<p class="mapa-explicacion reveal">
+  Para que puedas orientarte durante el encuentro, este mapa recoge los
+  <strong>principales espacios de Castronuño</strong> que utilizaremos durante el PROFEST.
+</p>
     <figure class="mapa-encuentro reveal">
       <img
         src="MapaA3x5.png"
