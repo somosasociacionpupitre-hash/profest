@@ -107,7 +107,29 @@ section { padding: 5rem 1.5rem; }
 .cuando-foto-placeholder .ph-icon { font-size: 3rem; margin-bottom: .8rem; }
 .cuando-foto-placeholder p { font-family: 'Nunito', sans-serif; font-size: .9rem; font-weight: 600; }
 @media (max-width: 768px) { .cuando-flex { flex-direction: column; } .cuando-foto { flex: unset; width: 100%; } }
+.mapa-encuentro {
+  width: 100%;
+  margin-top: 2.5rem;
+  border: 2px solid rgba(239, 202, 210, .35);
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, .25);
+}
 
+.mapa-encuentro img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .mapa-encuentro {
+    margin-top: 1.5rem;
+    border-radius: 16px;
+  }
+}
+
+  
 /* HORARIOS */
 #horarios {
   background: var(--crema);
@@ -668,9 +690,18 @@ Quiero inscribirme →
         <p class="cuando-desc">Castronuño tiene todo lo que necesitas para pasar el verano: un río, un complejo acuático, una piscina. Además, es un enclave único para la observación de aves y las rutas de senderismo, 
           en medio de una reserva natural. ¡Ah! Importante... y por la noche refresca ;)</p>
       </div>
-      <div class="cuando-foto">
-         <img src="castronuno.png" alt="Vista del río Duero en Castronuño">
+            <div class="cuando-foto">
+        <img src="castronuno.png" alt="Vista del río Duero en Castronuño">
+      </div>
     </div>
+
+    <figure class="mapa-encuentro reveal">
+      <img
+        src="Mapa Profest 2026.png"
+        alt="Mapa de Castronuño con los espacios utilizados durante PROFEST"
+        loading="lazy"
+      >
+    </figure>
   </div>
 </section>
 
